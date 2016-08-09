@@ -1,3 +1,26 @@
+<?php
+  $logged_in = false;
+  if (isset($_SESSION['user'])) {
+    // check to see if user is temp signup account.
+    if ($_SESSION['user'] == 'temp' && isset($_SESSION['temp-time'])) {
+      $date = new DateTime();
+      $date->sub(new DateInterval('PT1H'));
+
+      // verify if the temp account has expired
+      if ($date < $_SESSION['temp-time']) {
+        session_destroy();
+      } else {
+        $logged_in = true;
+      }
+    } else {
+      $logged_in = true;
+    }
+  }
+  echo $logged_in;
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
@@ -15,17 +38,27 @@
 </head>
 <body>
   <div class="intro">
-  	  <header class="menu" id="headerfix"> 
-          <div class="menu_background"></div>
-          <div class="menu_background1">
-                <nav class="session">
-                    <a href="#" class="login">Login</a>
-                    <a href="#" class="signup">Sign Up FREE</a>
-                </nav>
-                <div class="logo">
-                    <img src="images/lucky_logo.png">
-                    <b>life tools</b></div>
-              </div>
+	  <header class="menu" id="headerfix"> 
+      <div class="menu_background"></div>
+      <div class="menu_background1">
+        <nav class="session">
+          <?php 
+            if ($logged_in) {
+          ?>
+            <a href="/logout.php" class="login logged_in">Log Out</a>
+          <?php
+            } else {
+          ?>
+            <a href="/login.php" class="login">Login</a>
+            <a href="/signup.php" class="signup">Sign Up FREE</a>
+          <?php
+            }
+          ?>
+        </nav>
+        <div class="logo">
+            <img src="images/lucky_logo.png">
+            <b>life tools</b></div>
+      </div>
     </header>
     <div class="intro_content"> 
     	<div class="star lt-16_80 twinkle88 duration1s">&#9679; </div>
@@ -76,79 +109,83 @@
         </div>
     </div>
   </div><!-- end intro -->
-    <div id="planner">
-    	<section id="xlipsum" class="container">
-       		<div class="row">
-                <div class="annual_review one-half column hide">
-                    <object type="image/svg+xml" data="images/icon-annual_review_web.svg"></object>
-                    <h3>Life  Planner</h3>
-                    <p>A paper planner that guides you into creating a life of magic, power and freedom.</p> 
-                  <form>
-                      <div class="row">
-                          <!--<div class="seven columns"> 
-                              <input class="u-full-width" placeholder="test@mailbox.com" id="exampleEmailInput" type="email">
-                          </div>               
-                          <div class="five columns"> 
-                              <input class="button-primary" value="Sign up FREE" type="submit">
-                          </div>-->
-                          <div class="six columns">
-                          	  <button class="button-primary sign_up_free">Sign up FREE</button>
-                          </div>
-                          <div class="six columns">
-                       	  <a href="webapp-annual_review.php" class="learnmore">Learn More <span>»</span></a></div>
-                      </div>
-                  </form>     
-                </div>
-                <div class="life_manager one-half column hide">
-                    <object type="image/svg+xml" data="images/icon-life_manager.svg"></object>
-                  <h3>Lucky Diary</h3>
-                    <p>A private web-based diary   that asks a new positive and inspiring question every day of the year.</p>
-                    
-                  <form>
-                      <div class="row">   
-                              <a href="webapp-life_manager.php" class="learnmore">Visit website <span>»</span></a>
-                      </div>
-                  </form>
-                </div>
-                <div class="row">
-                    <div class="five columns">
-                        <img src="images/life_planner1.jpg" alt="LUCKY Life Planner">
-                    </div>
-                    <div class="seven columns">                    
-                      <header>
-                        <h2>LUCKY Life Planner 2017 </h2>
-                          <p>A new, intelligent planner that helps you use your time wisely,  achieve your big goals, and  live a full, bold, and inspired life. </p>
-                      </header> 
-                           <h5>Get Notified <span><b>★ ★ ★</b>of the launch<b>★ ★ ★</b></span></h5>
-                           <!-- Begin MailChimp Signup Form -->
-                        
-                      <div id="mc_embed_signup" class="form_wrapper">
-                            <form action="//gmail.us13.list-manage.com/subscribe/post?u=1dceffc356ef36f6802af4277&amp;id=292e52735d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                              <div id="mc_embed_signup_scroll" class="row">
-                                
-                                <div class="mc-field-group six columns">
-                                    <label for="mce-EMAIL" class="align_form">Enter your email:</label>
-                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                                </div>
-<!--                                    <div id="mce-responses" class="clear">
-                                        <div class="response" id="mce-error-response" style="display:none"></div>
-                                        <div class="response" id="mce-success-response" style="display:none"></div>
-                                    </div>  --> 
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1dceffc356ef36f6802af4277_292e52735d" tabindex="-1" value=""></div> 
-                                <div class="five columns">
-                                <div class="align_form"></div>
-                                    <input type="submit" value="Keep me Posted" name="subscribe" id="mc-embedded-subscribe" class="button-primary"> 
-                                </div> 
-                                </div>
-                                <div>Your email  is safe with us - we'll keep it private and only use it to notify you of the launch of the life planner. </div>
-                            </form>
+  <div id="planner">
+  	<section id="xlipsum" class="container">
+     		<div class="row">
+              <div class="annual_review one-half column hide">
+                  <object type="image/svg+xml" data="images/icon-annual_review_web.svg"></object>
+                  <h3>Life  Planner</h3>
+                  <p>A paper planner that guides you into creating a life of magic, power and freedom.</p> 
+                <form>
+                    <div class="row">
+                        <!--<div class="seven columns"> 
+                            <input class="u-full-width" placeholder="test@mailbox.com" id="exampleEmailInput" type="email">
+                        </div>               
+                        <div class="five columns"> 
+                            <input class="button-primary" value="Sign up FREE" type="submit">
+                        </div>-->
+                        <div class="six columns">
+                        	  <button class="button-primary sign_up_free">Sign up FREE</button>
                         </div>
-                        <!--End mc_embed_signup-->  
+                        <div class="six columns">
+                     	  <a href="webapp-annual_review.php" class="learnmore">Learn More <span>»</span></a></div>
                     </div>
-                </div>
-            </div>  
-        </section>
-    </div>
+                </form>     
+              </div>
+              <div class="life_manager one-half column hide">
+                  <object type="image/svg+xml" data="images/icon-life_manager.svg"></object>
+                <h3>Lucky Diary</h3>
+                  <p>A private web-based diary   that asks a new positive and inspiring question every day of the year.</p>
+                  
+                <form>
+                    <div class="row">   
+                            <a href="webapp-life_manager.php" class="learnmore">Visit website <span>»</span></a>
+                    </div>
+                </form>
+              </div>
+              <div class="row">
+                  <div class="five columns">
+                      <img src="images/life_planner1.jpg" alt="LUCKY Life Planner">
+                  </div>
+                  <div class="seven columns">                    
+                    <header>
+                      <h2>LUCKY Life Planner 2017 </h2>
+                        <p>A new, intelligent planner that helps you use your time wisely,  achieve your big goals, and  live a full, bold, and inspired life. </p>
+                    </header> 
+                         <h5>Get Notified <span><b>★ ★ ★</b>of the launch<b>★ ★ ★</b></span></h5>
+                         <!-- Begin MailChimp Signup Form -->
+                      
+                    <div id="mc_embed_signup" class="form_wrapper">
+                          <form action="//gmail.us13.list-manage.com/subscribe/post?u=1dceffc356ef36f6802af4277&amp;id=292e52735d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll" class="row">
+                              
+                              <div class="mc-field-group six columns">
+                                  <label for="mce-EMAIL" class="align_form">Enter your email:</label>
+                                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                              </div>
+<!--                                    <div id="mce-responses" class="clear">
+                                      <div class="response" id="mce-error-response" style="display:none"></div>
+                                      <div class="response" id="mce-success-response" style="display:none"></div>
+                                  </div>  --> 
+                              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1dceffc356ef36f6802af4277_292e52735d" tabindex="-1" value=""></div> 
+                              <div class="five columns">
+                              <div class="align_form"></div>
+                                  <input type="submit" value="Keep me Posted" name="subscribe" id="mc-embedded-subscribe" class="button-primary"> 
+                              </div> 
+                              </div>
+                              <div>Your email  is safe with us - we'll keep it private and only use it to notify you of the launch of the life planner. </div>
+                          </form>
+                      </div>
+                      <!--End mc_embed_signup-->  
+                  </div>
+              </div>
+          </div>  
+      </section>
+  </div>
+  <?php 
+    // only show if user is logged in
+    if ($logged_in) {
+  ?>
     <div id="printables">
     	<section class="container">
         	<header>
@@ -397,6 +434,10 @@
             </div>
         </section>
     </div> 
+  <?php
+    // ends content for when users are logged in
+    }
+  ?>
     
     <footer> 
         <div class="sm">

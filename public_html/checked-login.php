@@ -1,6 +1,6 @@
 <?php
 
-ob_start();
+/*ob_start();
 session_start();
 
 // check to see if user is logged in, if not redirect
@@ -19,3 +19,4 @@ if ($_SESSION['user'] == 'temp' && isset($_SESSION['temp-time'])) {
 		session_destroy();
 	}
 }
+*/

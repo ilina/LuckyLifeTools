@@ -1,3 +1,7 @@
+<?php
+  include_once 'checked-login.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +20,8 @@
 
   	<header class="menu fixate">
     	<nav class="session">
-	        <a href="login.php" class="login">Login</a>
-	        <a href="signup.php" clasS="signup">Sign Up FREE</a>
-        </nav>
+        <a href="/logout.php" class="login logged_in">Log Out</a>
+      </nav>
         <a href="index.php" class="logo">
             <img src="images/lucky_logo.png">
             <b>life tools</b></div>
