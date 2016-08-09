@@ -20,8 +20,8 @@ if (isset($_POST['btn-signup']) != "") {
 
   // Creates a db entry for the user if it doesn't exist
   if (!$row) {
-    $id = uniqid();
-    $results = $db->query("INSERT INTO users(email,password,id) VALUES('$email', '$password', '$id')");
+    $refid = uniqid();
+    $results = $db->query("INSERT INTO users(email,password,refid,verified) VALUES('$email', '$password', '$refid', 0)");
     // if succeed in signing up
     if ($results) {
       // setup up the email account
@@ -31,13 +31,16 @@ if (isset($_POST['btn-signup']) != "") {
 
       // setup the mailing class
       $mailer = Swift_Mailer::newInstance($transport);
-      
+      $body = "
+        http://localhost/LuckyLifeTools/public_html/verify.php?$refid
+      ";
+      echo $body;
       // Create the message
       $message = Swift_Message::newInstance()
         ->setSubject('Your subject')
         ->setFrom(array('john@doe.com' => 'John Doe'))
         ->setTo(array('iamjoshchang@gmail.com' => 'Josh Chang'))
-        ->setBody('Here is the message itself');
+        ->setBody($body);
 
       // send the mail
       $mailer->send($message);

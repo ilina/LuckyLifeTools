@@ -3,8 +3,7 @@
 include_once 'checked-login.php';
 include_once 'connect.php';
 
-$success = true;
-
+$msg = "";
 // checks to see if the user clicked the logged in button
 // and redirected back to the same page
 if (isset($_POST['btn-login']) != "") {
@@ -20,10 +19,15 @@ if (isset($_POST['btn-login']) != "") {
 
  	// user logged in
  	if ($row && $password == $row['password']) {
- 		$_SESSION['user'] = $row['user_id'];
- 		header("Location: index.php");
+ 		// check if verified email
+ 		if (!$row['verified']) {
+ 			$msg = "Please verify your account";
+ 		} else {
+	 		$_SESSION['user'] = $row['user_id'];
+	 		header("Location: index.php");
+	 	}
  	} else {
- 		$success = false;
+ 		$msg = "Incorrct email/password";
  	}
 }
 
@@ -64,11 +68,13 @@ if (isset($_POST['btn-login']) != "") {
 
     <?php
 			// displays the error message in the event of login failure
-			if (!$success) {
+			if ($msg != "") {
 		?>
 			<!-- some customized red error css here -->
 			<div class="alert">
-				Invalid email and/or password!
+				<?php
+					echo $msg;
+				?>
 			</div>
 		<?php 
 			}
