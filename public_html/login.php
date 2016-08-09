@@ -1,13 +1,12 @@
 <?php
-ob_start();
-session_start();
-
+ 
+include_once 'checked-login.php';
 include_once 'connect.php';
 
 $success = true;
 
 // checks to see if the user clicked the logged in button
-// and redirected back to the beginning
+// and redirected back to the same page
 if (isset($_POST['btn-login']) != "") {
 	$email = $_POST['email'];
 	$pass = $_POST['password'];
@@ -58,25 +57,49 @@ if (isset($_POST['btn-login']) != "") {
 	</header> 
 
 	<div class="container printable" id="LifePlanner">
-		<?php
+		<object type="image/svg+xml" data="images/icon-schedule.svg"></object>
+		<h1>Login
+    	<p class="subheading">Sign in to get access to your Life Tools.</p>
+    </h1>
+
+    <?php
 			// displays the error message in the event of login failure
 			if (!$success) {
 		?>
-			<div class="form-group">
-				<div class="alert alert-danger">
-					<span class="glyphicon glyphicon-info-sign"></span> Invalid email and/or password!
-				</div>
+			<!-- some customized red error css here -->
+			<div class="alert">
+				Invalid email and/or password!
 			</div>
 		<?php 
 			}
 		?>
-		<object type="image/svg+xml" data="images/icon-schedule.svg"></object>
-		<h1>Login
-    	<p class="subheading">Plan your goals, tasks and events in Daily, Weekly, Monthly, and Yearly formats.</p>
-    </h1>
-    <p>This is a set of printables that you can use to schedule your time. Choose between various formats and layouts.</p> 
-        
-    <p>This printable is a worksheet that gives you the structure and the guidance to go through this process. It's totally FREE, and you can download after a quick sign up.</p>
+
+    <form method="post" autocomplete="off">
+		  <div class="col-md-12">
+				<div class="input-group">
+					<div class="row">
+						<div class="one columns">Email:</div> 
+						<div class="four columns form-input">
+							<input type="email" name="email" placeholder="Your Email" required />
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="one columns">Password:</div>
+					<div class="four columns form-input">
+						<input type="password" name="pass" placeholder="Your Password" required />
+					</div>
+				</div>
+				
+				<hr />
+				<button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
+				<hr />
+			</div>
+		</form>
+
+		<a href="signup.php">Sign Up Here...</a>
+
   </div>
 
   <footer>    
@@ -88,9 +111,6 @@ if (isset($_POST['btn-login']) != "") {
     Copyright  © <strong>LuckyLifeTools.com</strong> - All rights reserved. 
     <span class="terms"><a href="https://www.yoledo.com/pages/terms" target="_blank">Terms</a> | <a href="https://www.yoledo.com/pages/privacy" target="_blank">Privacy</a></span>
   </footer>
-    
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-  <script src="js/functions.js"></script>
-    
+        
 </body>
 </html>
