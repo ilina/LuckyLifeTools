@@ -20,6 +20,7 @@ if (isset($_POST['btn-signup']) != "") {
 
   // Creates a db entry for the user if it doesn't exist
   if (!$row) {
+    $id = uniqid();
     $results = $db->query("INSERT INTO users(email,password,id) VALUES('$email', '$password', '$id')");
     // if succeed in signing up
     if ($results) {
@@ -55,4 +56,5 @@ if (isset($_POST['btn-signup']) != "") {
     $msg = 'Email is already in use.';
   }
 }
+
 ?>
