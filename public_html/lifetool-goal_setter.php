@@ -1,5 +1,5 @@
 <?php
-  include_once 'checked-login.php';
+  include_once 'snippets/checked-login.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +19,24 @@
 <body class="internal">
 
   	<header class="menu fixate">
-    	<nav class="session">
-        <a href="/logout.php" class="login logged_in">Log Out</a>
-        </nav>
-        <a href="index.php" class="logo">
-            <img src="images/lucky_logo.png">
-            <b>life tools</b></div>
-        </a>
+      <nav class="session">
+        <?php 
+          if ($logged_in) {
+        ?>
+          <a href="logout.php" class="login logged_in">Log Out</a>
+        <?php
+          } else {
+        ?>
+          <a href="login.php" class="login">Login</a>
+          <a href="signup.php" class="signup">Sign Up FREE</a>
+        <?php
+          }
+        ?>
+      </nav>
+      <a href="index.php" class="logo">
+          <img src="images/lucky_logo.png">
+          <b>life tools</b></div>
+      </a>
     </header> 
     
     	<div class="breadcrumb">
@@ -48,12 +59,18 @@
   </div>
 
         <p>This printable is a worksheet that gives you the structure and the guidance to go through this process. It's totally FREE, and you can download after a quick sign up.</p>
-  		<form class="login_or_signup">
-        	<a href="#">Login</a> or
-			<button type="submit" class="button-primary signup">Sign Up<b><br>
-			to download</b>
-			</button>
-        </form>
+      <?php
+        if (!$logged_in) {
+      ?>
+      <form class="login_or_signup" action="signup.php">
+        <a href="login.php">Login</a> or
+        <button type="submit" class="button-primary signup">Sign Up<b><br>
+        to download</b>
+        </button>
+      </form>
+      <?php
+        } else {
+      ?>
   		<form method="get" action="pdf/lucky_printable-goal_setter.pdf">
 			<button type="submit" class="button-primary">Download Printable</button>
         </form>

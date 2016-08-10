@@ -1,22 +1,5 @@
 <?php
-  $logged_in = false;
-  if (isset($_SESSION['user'])) {
-    // check to see if user is temp signup account.
-    if ($_SESSION['user'] == 'temp' && isset($_SESSION['temp-time'])) {
-      $date = new DateTime();
-      $date->sub(new DateInterval('PT1H'));
-
-      // verify if the temp account has expired
-      if ($date < $_SESSION['temp-time']) {
-        session_destroy();
-      } else {
-        $logged_in = true;
-      }
-    } else {
-      $logged_in = true;
-    }
-  }
-  echo $logged_in;
+  include_once 'snippets/checked-login.php';
 ?>
 
 
@@ -45,12 +28,12 @@
           <?php 
             if ($logged_in) {
           ?>
-            <a href="/logout.php" class="login logged_in">Log Out</a>
+            <a href="logout.php" class="login logged_in">Log Out</a>
           <?php
             } else {
           ?>
-            <a href="/login.php" class="login">Login</a>
-            <a href="/signup.php" class="signup">Sign Up FREE</a>
+            <a href="login.php" class="login">Login</a>
+            <a href="signup.php" class="signup">Sign Up FREE</a>
           <?php
             }
           ?>
@@ -182,276 +165,269 @@
           </div>  
       </section>
   </div>
-  <?php 
-    // only show if user is logged in
-    if ($logged_in) {
-  ?>
-    <div id="printables">
-    	<section class="container">
-        	<header>
-            	<h2>Printable Life Tools </h2>
-            	<p>These  free PDF printable  tools will help you plan and examine your life. <a href="#">Sign up</a> (quick and free) to download.</p>
-              <form method="get" action="pdf/LuckyLifeTools-printables.pdf" class="download_all">
-                    <button type="submit" class="button-primary">Download all Tools</button>
-              </form>
-            </header>
+  <div id="printables">
+  	<section class="container">
+      	<header>
+          	<h2>Printable Life Tools </h2>
+          	<p>These  free PDF printable  tools will help you plan and examine your life. <a href="#">Sign up</a> (quick and free) to download.</p>
+            <form method="get" action="pdf/LuckyLifeTools-printables.pdf" class="download_all">
+                  <button type="submit" class="button-primary">Download all Tools</button>
+            </form>
+          </header>
+        <div class="row">
+              <ul class="four columns">
+                  <h4>Vision:</h4> 
+                  <li> 
+                      <a href="lifetool-life_plan.php">
+                         <object type="image/svg+xml" data="images/icon-swot.svg"></object>
+                         <h3>Life  Plan</h3>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="lifetool-goal_setter.php">
+                        <object type="image/svg+xml" data="images/icon-goal_planner.svg"></object>  
+                        <h3>Goal Setter</h3>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="lifetool-annual_review.php">
+                        <object type="image/svg+xml" data="images/icon-annual_review.svg"></object> 
+                        <h3>Annual Review</h3>
+                      </a>
+                  </li>
+              </ul>
+          <ul class="four columns">
+                  <h4>Action Plan:</h4> 
+                  <li>
+                    <a href="lifetool-schedule.php">
+                         <object type="image/svg+xml" data="images/icon-time_capsule.svg"></object>  
+                         <h3>Schedule &amp; To-do</h3>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="lifetool-calendars.php">
+                        <object type="image/svg+xml" data="images/icon-schedule.svg"></object>  
+                        <h3>Calendars</h3>
+                      </a>
+                  </li>
+                  <li>
+             		  <a href="lifetool-habit_builder.php">
+                         <object type="image/svg+xml" data="images/icon-self.svg"></object> 
+                         <h3>Habit Builder</h3>
+                  	</a>
+                  </li>
+              </ul> 
+              <ul class="four columns">
+              <h4>Mind tools:</h4> 
+                  <li>
+                      <a href="lifetool-life_balancer.php">
+                         <object type="image/svg+xml" data="images/icon-life_balance.svg">
+                         </object>
+                         <h3>Life Balance</h3>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="lifetool-decision_maker.php">
+                         <object type="image/svg+xml" data="images/icon-decision_maker.svg"></object>  
+                         <h3>Decision Maker</h3>
+                      </a>
+                  </li>
+                  <li>
+                	   <a href="lifetool-happiness_booster.php">
+                       <object type="image/svg+xml" data="images/icon-happiness.svg"></object>  
+                       <h3>Happiness Booster</h3>
+                     </a>
+                  </li> 
+          </ul>
+          </div>
+      </section>
+  </div>
+  <div id="mobile">
+  	<section class="container">
+          <h2>Mobile Apps</h2>
           <div class="row">
-                <ul class="four columns">
-                    <h4>Vision:</h4> 
-                    <li> 
-                        <a href="lifetool-life_plan.php">
-                           <object type="image/svg+xml" data="images/icon-swot.svg"></object>
-                           <h3>Life  Plan</h3>
-                        </a>
-                    </li>
-                    <li>
-                      <a href="lifetool-goal_setter.php">
-                          <object type="image/svg+xml" data="images/icon-goal_planner.svg"></object>  
-                          <h3>Goal Setter</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="lifetool-annual_review.php">
-                          <object type="image/svg+xml" data="images/icon-annual_review.svg"></object> 
-                          <h3>Annual Review</h3>
-                        </a>
-                    </li>
-                </ul>
-            <ul class="four columns">
-                    <h4>Action Plan:</h4> 
-                    <li>
-                      <a href="lifetool-schedule.php">
-                           <object type="image/svg+xml" data="images/icon-time_capsule.svg"></object>  
-                           <h3>Schedule &amp; To-do</h3>
-                        </a>
-                    </li>
-                    <li>
-                      <a href="lifetool-calendars.php">
-                          <object type="image/svg+xml" data="images/icon-schedule.svg"></object>  
-                          <h3>Calendars</h3>
-                        </a>
-                    </li>
-                    <li>
-               		  <a href="lifetool-habit_builder.php">
-                           <object type="image/svg+xml" data="images/icon-self.svg"></object> 
-                           <h3>Habit Builder</h3>
-                    	</a>
-                    </li>
-                </ul> 
-                <ul class="four columns">
-                <h4>Mind tools:</h4> 
-                    <li>
-                        <a href="lifetool-life_balancer.php">
-                           <object type="image/svg+xml" data="images/icon-life_balance.svg">
-                           </object>
-                           <h3>Life Balance</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="lifetool-decision_maker.php">
-                           <object type="image/svg+xml" data="images/icon-decision_maker.svg"></object>  
-                           <h3>Decision Maker</h3>
-                        </a>
-                    </li>
-                    <li>
-                  	   <a href="lifetool-happiness_booster.php">
-                         <object type="image/svg+xml" data="images/icon-happiness.svg"></object>  
-                         <h3>Happiness Booster</h3>
-                       </a>
-                    </li> 
-            </ul>
-            </div>
-        </section>
-    </div>
-    <div id="mobile">
-    	<section class="container">
-            <h2>Mobile Apps</h2>
-            <div class="row">
-                <div class="four columns">
-                  <h3>Time Capsule</h3> 
-              </div>
               <div class="four columns">
-                <h3>Life Balance</h3> 
-              </div>
-              <div class="four columns">
-                <h3>Habit Tracker</h3> 
-              </div>
+                <h3>Time Capsule</h3> 
             </div>
-        </section>
-    </div>
-    <div id="art">
-    	<section class="container">
-        	<header>
-            	<h2>Printable Quotes</h2>
-            	<p>Print out these inspiring quotes and put them in a visible place to be inspired every day. <a href="#">Sign up</a> (quick and free) to download.</p> 
-            </header>
-              <form method="get" action="quotes/LuckyLifeTools-quotes.pdf" class="download_all">
-                    <button type="submit" class="button-primary">Download all Quotes</button>
-              </form>
-            <div class="above950">
-            	<div class="row">
-                <ul> 
-                    <li class="columns two">
-                    	<a href="quotes/quote-attempt_the_aburd.jpg" download>
-               	    		<img src="images/quote-attempt_the_aburd.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-be_kind.jpg" download>
-                    		<img src="images/quote-be_kind.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-change_is_opportunity.jpg" download>
-                    		<img src="images/quote-change_is_opportunity.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-find_yourself.jpg" download>
-                    		<img src="images/quote-find_yourself.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-this_moment.jpg" download>
-                    		<img src="images/quote-this_moment.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-umph.jpg" download>
-                    		<img src="images/quote-umph.png" alt="quote">
-                    	</a>
-                    </li>
-                </ul> 
+            <div class="four columns">
+              <h3>Life Balance</h3> 
             </div>
-            	<div class="row">
-                <ul> 
-                    <li class="columns two">
-                    	<a href="quotes/quote-give_up_to_have.jpg" download>
-               	    		<img src="images/quote-give_up_to_have.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-happiness.jpg" download>
-                    		<img src="images/quote-happiness.png" alt="quote">
-                        </a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-life_comfort_zone.jpg" download>
-                    		<img src="images/quote-life_comfort_zone.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-be_a_friend.jpg" download>
-                    		<img src="images/quote-be_a_friend.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-love_light.jpg" download>
-                    		<img src="images/quote-love_light.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns two">
-                    	<a href="quotes/quote-start_necessary.jpg" download>
-                    		<img src="images/quote-start_necessary.png" alt="quote">
-                    	</a>
-                    </li>
+            <div class="four columns">
+              <h3>Habit Tracker</h3> 
+            </div>
+          </div>
+      </section>
+  </div>
+  <div id="art">
+  	<section class="container">
+      	<header>
+          	<h2>Printable Quotes</h2>
+          	<p>Print out these inspiring quotes and put them in a visible place to be inspired every day. <a href="#">Sign up</a> (quick and free) to download.</p> 
+          </header>
+            <form method="get" action="quotes/LuckyLifeTools-quotes.pdf" class="download_all">
+                  <button type="submit" class="button-primary">Download all Quotes</button>
+            </form>
+          <div class="above950">
+          	<div class="row">
+              <ul> 
+                  <li class="columns two">
+                  	<a href="quotes/quote-attempt_the_aburd.jpg" download>
+             	    		<img src="images/quote-attempt_the_aburd.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-be_kind.jpg" download>
+                  		<img src="images/quote-be_kind.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-change_is_opportunity.jpg" download>
+                  		<img src="images/quote-change_is_opportunity.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-find_yourself.jpg" download>
+                  		<img src="images/quote-find_yourself.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-this_moment.jpg" download>
+                  		<img src="images/quote-this_moment.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-umph.jpg" download>
+                  		<img src="images/quote-umph.png" alt="quote">
+                  	</a>
+                  </li>
               </ul> 
-            </div>
-            </div>
-            <div class="under950">
-            	<div class="row">
-                <ul> 
-                    <li class="columns three">
-                    	<a href="quotes/quote-attempt_the_aburd.jpg" download>
-                        	<img src="images/quote-attempt_the_aburd.png" alt="quote"> </a>
-     
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-be_kind.jpg" download>
-                    		<img src="images/quote-be_kind.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-change_is_opportunity.jpg" download>
-                    		<img src="images/quote-change_is_opportunity.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-find_yourself.jpg" download>
-                    		<img src="images/quote-find_yourself.png" alt="quote">
-                    	</a>
-                    </li>
-                </ul> 
-            </div>
-            <div class="row">
-                <ul> 
-                    <li class="columns three">
-                    	<a href="quotes/quote-this_moment.jpg" download>
-                    		<img src="images/quote-this_moment.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-umph.jpg" download>
-                    		<img src="images/quote-umph.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-give_up_to_have.jpg" download>
-               	    		<img src="images/quote-give_up_to_have.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-happiness.jpg" download>
-                    		<img src="images/quote-happiness.png" alt="quote">
-                    	</a>
-                    </li>
-                </ul> 
-            </div>
-            <div class="row">
-                <ul> 
-                    <li class="columns three">
-                    	<a href="quotes/quote-life_comfort_zone.jpg" download>
-                    		<img src="images/quote-life_comfort_zone.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-be_a_friend.jpg" download>
-                    		<img src="images/quote-be_a_friend.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-love_light.jpg" download>
-                    		<img src="images/quote-love_light.png" alt="quote">
-                    	</a>
-                    </li>
-                    <li class="columns three">
-                    	<a href="quotes/quote-start_necessary.jpg" download>
-                    		<img src="images/quote-start_necessary.png" alt="quote">
-                    	</a>
-                    </li>
+          </div>
+          	<div class="row">
+              <ul> 
+                  <li class="columns two">
+                  	<a href="quotes/quote-give_up_to_have.jpg" download>
+             	    		<img src="images/quote-give_up_to_have.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-happiness.jpg" download>
+                  		<img src="images/quote-happiness.png" alt="quote">
+                      </a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-life_comfort_zone.jpg" download>
+                  		<img src="images/quote-life_comfort_zone.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-be_a_friend.jpg" download>
+                  		<img src="images/quote-be_a_friend.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-love_light.jpg" download>
+                  		<img src="images/quote-love_light.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns two">
+                  	<a href="quotes/quote-start_necessary.jpg" download>
+                  		<img src="images/quote-start_necessary.png" alt="quote">
+                  	</a>
+                  </li>
+            </ul> 
+          </div>
+          </div>
+          <div class="under950">
+          	<div class="row">
+              <ul> 
+                  <li class="columns three">
+                  	<a href="quotes/quote-attempt_the_aburd.jpg" download>
+                      	<img src="images/quote-attempt_the_aburd.png" alt="quote"> </a>
+   
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-be_kind.jpg" download>
+                  		<img src="images/quote-be_kind.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-change_is_opportunity.jpg" download>
+                  		<img src="images/quote-change_is_opportunity.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-find_yourself.jpg" download>
+                  		<img src="images/quote-find_yourself.png" alt="quote">
+                  	</a>
+                  </li>
               </ul> 
-            </div>
-            </div>
-        </section>
-    </div> 
-  <?php
-    // ends content for when users are logged in
-    }
-  ?>
+          </div>
+          <div class="row">
+              <ul> 
+                  <li class="columns three">
+                  	<a href="quotes/quote-this_moment.jpg" download>
+                  		<img src="images/quote-this_moment.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-umph.jpg" download>
+                  		<img src="images/quote-umph.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-give_up_to_have.jpg" download>
+             	    		<img src="images/quote-give_up_to_have.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-happiness.jpg" download>
+                  		<img src="images/quote-happiness.png" alt="quote">
+                  	</a>
+                  </li>
+              </ul> 
+          </div>
+          <div class="row">
+              <ul> 
+                  <li class="columns three">
+                  	<a href="quotes/quote-life_comfort_zone.jpg" download>
+                  		<img src="images/quote-life_comfort_zone.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-be_a_friend.jpg" download>
+                  		<img src="images/quote-be_a_friend.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-love_light.jpg" download>
+                  		<img src="images/quote-love_light.png" alt="quote">
+                  	</a>
+                  </li>
+                  <li class="columns three">
+                  	<a href="quotes/quote-start_necessary.jpg" download>
+                  		<img src="images/quote-start_necessary.png" alt="quote">
+                  	</a>
+                  </li>
+            </ul> 
+          </div>
+          </div>
+      </section>
+  </div> 
+
     
-    <footer> 
-        <div class="sm">
-        	<a href="http://www.facebook.com/luckylifetools/"><img src="images/social/social_facebook.svg"></a> 
-            <a href="http://www.instagram.com/luckylifetools/"><img src="images/social/social_instagram.svg"></a> 
-            <a href="http://www.twitter.com/luckylifetools/"><img src="images/social/social_twitter.svg"></a>
-        </div>
-    	Copyright  © <strong>LuckyLifeTools.com</strong> - All rights reserved. 
-    </footer>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-    <script src="js/functions.js"></script>      
-    
-    <a href="#0" class="cd-top">Top</a>
-    
+  <footer> 
+      <div class="sm">
+      	<a href="http://www.facebook.com/luckylifetools/"><img src="images/social/social_facebook.svg"></a> 
+          <a href="http://www.instagram.com/luckylifetools/"><img src="images/social/social_instagram.svg"></a> 
+          <a href="http://www.twitter.com/luckylifetools/"><img src="images/social/social_twitter.svg"></a>
+      </div>
+  	Copyright  © <strong>LuckyLifeTools.com</strong> - All rights reserved. 
+  </footer>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="js/functions.js"></script>      
+  
+  <a href="#0" class="cd-top">Top</a>
+  
 </body>
 </html>

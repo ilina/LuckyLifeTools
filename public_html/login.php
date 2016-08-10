@@ -1,7 +1,9 @@
 <?php
- 
-include_once 'checked-login.php';
-include_once 'connect.php';
+
+include_once 'snippets/form-check-login.php'; 
+include_once 'snippets/connect.php';
+
+// redirect if logged in
 
 $msg = "";
 // checks to see if the user clicked the logged in button
@@ -14,7 +16,7 @@ if (isset($_POST['btn-login']) != "") {
  	$pass = strip_tags(trim($pass));
 
  	$password = hash('sha256', $pass);
- 	$results = $db->query("SELECT * FROM users WHERE email=" . $email);
+ 	$results = $db->query("SELECT * FROM users WHERE email='$email'");
  	$row = $results->fetchArray();
 
  	// user logged in
@@ -23,7 +25,7 @@ if (isset($_POST['btn-login']) != "") {
  		if (!$row['verified']) {
  			$msg = "Please verify your account";
  		} else {
-	 		$_SESSION['user'] = $row['user_id'];
+	 		$_SESSION['user'] = $row['email'];
 	 		header("Location: index.php");
 	 	}
  	} else {
@@ -94,7 +96,7 @@ if (isset($_POST['btn-login']) != "") {
 				<div class="row">
 					<div class="one columns">Password:</div>
 					<div class="four columns form-input">
-						<input type="password" name="pass" placeholder="Your Password" required />
+						<input type="password" name="password" placeholder="Your Password" required />
 					</div>
 				</div>
 				

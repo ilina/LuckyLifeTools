@@ -1,5 +1,5 @@
 <?php
-  include_once 'checked-login.php';
+  include_once 'snippets/checked-login.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +19,24 @@
 <body class="internal">
 
   	<header class="menu fixate">
-    	<nav class="session">
-        <a href="/logout.php" class="login logged_in">Log Out</a>
-        </nav>
-        <a href="index.php" class="logo">
-            <img src="images/lucky_logo.png">
-            <b>life tools</b></div>
-        </a>
+      <nav class="session">
+        <?php 
+          if ($logged_in) {
+        ?>
+          <a href="logout.php" class="login logged_in">Log Out</a>
+        <?php
+          } else {
+        ?>
+          <a href="login.php" class="login">Login</a>
+          <a href="signup.php" class="signup">Sign Up FREE</a>
+        <?php
+          }
+        ?>
+      </nav>
+      <a href="index.php" class="logo">
+          <img src="images/lucky_logo.png">
+          <b>life tools</b></div>
+      </a>
     </header> 
     
 <div class="breadcrumb">
