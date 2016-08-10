@@ -2,8 +2,6 @@
   include_once 'snippets/checked-login.php';
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
@@ -271,32 +269,92 @@
           	<div class="row">
               <ul> 
                   <li class="columns two">
-                  	<a href="quotes/quote-attempt_the_aburd.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-attempt_the_aburd.jpg" download>
+                    <?php
+                      }
+                    ?>
              	    		<img src="images/quote-attempt_the_aburd.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
-                  	<a href="quotes/quote-be_kind.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-be_kind.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-be_kind.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
-                  	<a href="quotes/quote-change_is_opportunity.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                      <a href="quotes/quote-change_is_opportunity.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-change_is_opportunity.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
-                  	<a href="quotes/quote-find_yourself.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-find_yourself.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-find_yourself.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
-                  	<a href="quotes/quote-this_moment.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-this_moment.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-this_moment.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
-                  	<a href="quotes/quote-umph.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-umph.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-umph.png" alt="quote">
                   	</a>
                   </li>
@@ -305,32 +363,92 @@
           	<div class="row">
               <ul> 
                   <li class="columns two">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
                   	<a href="quotes/quote-give_up_to_have.jpg" download>
+                    <?php
+                      }
+                    ?>
              	    		<img src="images/quote-give_up_to_have.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
-                  	<a href="quotes/quote-happiness.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-happiness.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-happiness.png" alt="quote">
                       </a>
                   </li>
                   <li class="columns two">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
                   	<a href="quotes/quote-life_comfort_zone.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-life_comfort_zone.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
                   	<a href="quotes/quote-be_a_friend.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-be_a_friend.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
-                  	<a href="quotes/quote-love_light.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-love_light.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-love_light.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns two">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
                   	<a href="quotes/quote-start_necessary.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-start_necessary.png" alt="quote">
                   	</a>
                   </li>
@@ -341,22 +459,62 @@
           	<div class="row">
               <ul> 
                   <li class="columns three">
-                  	<a href="quotes/quote-attempt_the_aburd.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-attempt_the_aburd.jpg" download>
+                    <?php
+                      }
+                    ?>
                       	<img src="images/quote-attempt_the_aburd.png" alt="quote"> </a>
    
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-be_kind.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-be_kind.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-be_kind.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-change_is_opportunity.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-change_is_opportunity.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-change_is_opportunity.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-find_yourself.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-find_yourself.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-find_yourself.png" alt="quote">
                   	</a>
                   </li>
@@ -365,22 +523,62 @@
           <div class="row">
               <ul> 
                   <li class="columns three">
-                  	<a href="quotes/quote-this_moment.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-this_moment.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-this_moment.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-umph.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-umph.jpg">
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-umph.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-give_up_to_have.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-give_up_to_have.jpg" download>
+                    <?php
+                      }
+                    ?>
              	    		<img src="images/quote-give_up_to_have.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-happiness.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-happiness.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-happiness.png" alt="quote">
                   	</a>
                   </li>
@@ -389,22 +587,75 @@
           <div class="row">
               <ul> 
                   <li class="columns three">
-                  	<a href="quotes/quote-life_comfort_zone.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-life_comfort_zone.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-life_comfort_zone.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-be_a_friend.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                      <a href="quotes/quote-love_light.jpg" download>
+                    <?php
+                      }
+                    ?>
+                      <img src="images/quote-love_light.png" alt="quote">
+                    </a>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-be_a_friend.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-be_a_friend.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-love_light.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-love_light.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-love_light.png" alt="quote">
                   	</a>
                   </li>
                   <li class="columns three">
-                  	<a href="quotes/quote-start_necessary.jpg" download>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="login.php">
+                    <?php
+                      } else {
+                    ?>
+                  	  <a href="quotes/quote-start_necessary.jpg" download>
+                    <?php
+                      }
+                    ?>
                   		<img src="images/quote-start_necessary.png" alt="quote">
                   	</a>
                   </li>
