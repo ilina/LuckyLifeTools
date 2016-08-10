@@ -37,14 +37,20 @@ if (isset($_POST['btn-signup']) != "") {
 
         // setup the mailing class
         $mailer = Swift_Mailer::newInstance($transport);
-        $body = "
+        $body = "Hi,\n
+          You're almost there to access your free tools from LuckyLifeTools! \n
+          All you have to do is click the link below to verify your account and 
+          gain access to all of your FREE tools! \n
           http://localhost/LuckyLifeTools/public_html/verify.php?a=$refid
+          \n 
+          Have a LUCKY day!\n
+          Ilina
           ";
         // Create the message
         $message = Swift_Message::newInstance()
-          ->setSubject('Your subject')
-          ->setFrom(array('john@doe.com' => 'John Doe'))
-          ->setTo(array('iamjoshchang@gmail.com' => 'Josh Chang'))
+          ->setSubject('LuckyLifeTools - Verification')
+          ->setFrom(array('hello@luckylifetools.com' => 'Ilina'))
+          ->setTo(array('iamjoshchang@gmail.com'))
           ->setBody($body);
 
         // send the mail
