@@ -17,6 +17,9 @@ if (isset($_POST['btn-signup']) != "") {
     $email = strip_tags(trim($email));
     $pass = strip_tags(trim($pass));
     $pass2 = strip_tags(trim($pass2));
+    $email = strtolower($email);
+
+    $md5 = md5($email);
 
     $password = hash('sha256', $pass);
 
@@ -62,6 +65,27 @@ if (isset($_POST['btn-signup']) != "") {
         $_SESSION['user'] = 'temp';
         $date = new DateTime();
         $_SESSION['temp-time'] = date('Y-m-d H:i:s', strtotime($date->format('Y-m-d H:i:s')));
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,"https://us4.api.mailchimp.com/3.0/lists/bbc5c7a16a/members/$md5");
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+        curl_setopt($ch, CURLOPT_USERPWD, "a:<api key>");  
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array('email_address' => $email, 'status_if_new' => 'subscribed')));
+
+        $resp = curl_exec($ch);
+        if(curl_error($ch))
+        {
+          echo 'error:' . curl_error($ch);
+        }
+        $info = curl_getinfo($ch);
+        print_r($info['request_header']);
+        // Close request to clear up some resources
+        var_dump($resp);
+        curl_close($ch);
+
         header("Location: index.php");
       } else {
         $msg = 'Error in creating account';
