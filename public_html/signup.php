@@ -34,9 +34,9 @@ if (isset($_POST['btn-signup']) != "") {
       if ($results) {
         echo "mail being sent";
         // setup up the email account
-        $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-          ->setUsername('iamjoshchang@gmail.com')
-          ->setPassword('');
+        $transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
+          ->setUsername('hello@luckylifetools.com')
+          ->setPassword('<email password>');
 
         // setup the mailing class
         $mailer = Swift_Mailer::newInstance($transport);
@@ -67,9 +67,9 @@ if (isset($_POST['btn-signup']) != "") {
         $_SESSION['temp-time'] = date('Y-m-d H:i:s', strtotime($date->format('Y-m-d H:i:s')));
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,"https://us4.api.mailchimp.com/3.0/lists/bbc5c7a16a/members/$md5");
+        curl_setopt($ch, CURLOPT_URL,"https://us13.api.mailchimp.com/3.0/lists/<list-id>/members/$md5");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($ch, CURLOPT_USERPWD, "a:<api key>");  
+        curl_setopt($ch, CURLOPT_USERPWD, "a:07bd4839c4d2436fc35afc4e28946864-us13");  
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLINFO_HEADER_OUT, true);
