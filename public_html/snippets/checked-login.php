@@ -4,6 +4,8 @@ ob_start();
 session_start();
 
 var_dump($_SESSION);
+
+// returns a variable to check if the user is valid
 $logged_in = false;
 if (isset($_SESSION['user'])) {
   // check to see if user is temp signup account.
