@@ -53,7 +53,7 @@ if (isset($_POST['btn-signup']) != "") {
         $message = Swift_Message::newInstance()
           ->setSubject('LuckyLifeTools - Verification')
           ->setFrom(array('hello@luckylifetools.com' => 'Ilina'))
-          ->setTo(array('iamjoshchang@gmail.com'))
+          ->setTo(array($email))
           ->setBody($body);
 
         // send the mail
