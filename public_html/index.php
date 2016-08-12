@@ -191,100 +191,40 @@
               <ul class="four columns">
                   <h4>Vision:</h4> 
                   <li> 
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                      <a href="lifetool-life_plan.php">
-                    <?php
-                      }
-                    ?>
-                         <object type="image/svg+xml" data="images/icon-swot.svg"></object>
-                         <h3>Life  Plan</h3>
-                      </a>
+                    <a href="lifetool-life_plan.php">
+                       <object type="image/svg+xml" data="images/icon-swot.svg"></object>
+                       <h3>Life  Plan</h3>
+                    </a>
                   </li>
                   <li>
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="#" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                      <a href="lifetool-goal_setter.php">
-                    <?php
-                      }
-                    ?>
-                        <object type="image/svg+xml" data="images/icon-goal_planner.svg"></object>  
-                        <h3>Goal Setter</h3>
-                      </a>
+                    <a href="lifetool-goal_setter.php">
+                      <object type="image/svg+xml" data="images/icon-goal_planner.svg"></object>  
+                      <h3>Goal Setter</h3>
+                    </a>
                   </li>
                   <li>
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="#" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                      <a href="lifetool-annual_review.php">
-                    <?php
-                      }
-                    ?>
-                        <object type="image/svg+xml" data="images/icon-annual_review.svg"></object> 
-                        <h3>Annual Review</h3>
-                      </a>
+                    <a href="lifetool-annual_review.php">
+                      <object type="image/svg+xml" data="images/icon-annual_review.svg"></object> 
+                      <h3>Annual Review</h3>
+                    </a>
                   </li>
               </ul>
           <ul class="four columns">
                   <h4>Action Plan:</h4> 
                   <li>
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="#" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                      <a href="lifetool-schedule.php">
-                    <?php
-                      }
-                    ?>
-                         <object type="image/svg+xml" data="images/icon-time_capsule.svg"></object>  
-                         <h3>Schedule &amp; To-do</h3>
-                      </a>
+                    <a href="lifetool-schedule.php">
+                       <object type="image/svg+xml" data="images/icon-time_capsule.svg"></object>  
+                       <h3>Schedule &amp; To-do</h3>
+                    </a>
                   </li>
                   <li>
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="#" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                      <a href="lifetool-calendars.php">
-                    <?php
-                      }
-                    ?>
-                        <object type="image/svg+xml" data="images/icon-schedule.svg"></object>  
-                        <h3>Calendars</h3>
-                      </a>
+                    <a href="lifetool-calendars.php">
+                      <object type="image/svg+xml" data="images/icon-schedule.svg"></object>  
+                      <h3>Calendars</h3>
+                    </a>
                   </li>
                   <li>
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="#" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                 		  <a href="lifetool-habit_builder.php">
-                    <?php
-                      }
-                    ?>
+                 		<a href="lifetool-habit_builder.php">
                          <object type="image/svg+xml" data="images/icon-self.svg"></object> 
                          <h3>Habit Builder</h3>
                   	</a>
@@ -293,53 +233,23 @@
               <ul class="four columns">
               <h4>Mind tools:</h4> 
                   <li>
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="#" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                      <a href="lifetool-life_balancer.php">
-                    <?php
-                      }
-                    ?>
-                         <object type="image/svg+xml" data="images/icon-life_balance.svg">
-                         </object>
-                         <h3>Life Balance</h3>
-                      </a>
+                    <a href="lifetool-life_balancer.php">
+                       <object type="image/svg+xml" data="images/icon-life_balance.svg">
+                       </object>
+                       <h3>Life Balance</h3>
+                    </a>
                   </li>
                   <li>
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="#" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                      <a href="lifetool-decision_maker.php">
-                    <?php
-                      }
-                    ?>
-                         <object type="image/svg+xml" data="images/icon-decision_maker.svg"></object>  
-                         <h3>Decision Maker</h3>
-                      </a>
+                    <a href="lifetool-decision_maker.php">
+                       <object type="image/svg+xml" data="images/icon-decision_maker.svg"></object>  
+                       <h3>Decision Maker</h3>
+                    </a>
                   </li>
                   <li>
-                    <?php
-                      if (!$logged_in) {
-                    ?>
-                      <a href="#" class="login-modal">
-                    <?php
-                      } else {
-                    ?>
-                 	    <a href="lifetool-happiness_booster.php">
-                    <?php
-                      }
-                    ?>
-                       <object type="image/svg+xml" data="images/icon-happiness.svg"></object>  
-                       <h3>Happiness Booster</h3>
-                     </a>
+               	    <a href="lifetool-happiness_booster.php">
+                      <object type="image/svg+xml" data="images/icon-happiness.svg"></object>  
+                      <h3>Happiness Booster</h3>
+                    </a>
                   </li> 
           </ul>
           </div>
