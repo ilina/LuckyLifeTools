@@ -134,10 +134,9 @@ if (isset($_POST['btn-signup']) != "") {
       <a href="login.php" class="login login-modal">Login</a>
       <a href="signup.php" class="signup signup-modal">Sign Up FREE</a>
     </nav>
-    <a href="index.php" class="logo">
-      <img src="images/lucky_logo.png">
-      <b>life tools</b></div>
-    </a>
+    <div class="logo">
+            <a href="index.php"></a>
+    </div>
   </header> 
 
   <div class="container printable" id="LifePlanner">

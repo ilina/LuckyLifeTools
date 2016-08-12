@@ -71,8 +71,7 @@ h1, h2, h4, h5, h6 {
 	letter-spacing:0.45em;
 	padding-left:0.4em;
 	font-weight:bold;
-	text-transform:uppercase;
-	display:block; }	
+	text-transform:uppercase; }	
 	
 .session { 
 	font-family: 'Varela Round', sans-serif;
@@ -879,6 +878,4 @@ footer img {
 .button-primary.signup { line-height:19px; height:50px; width:250px; background:#8ece33; border-color:#8ece33;}
 .button-primary b { text-transform:none; letter-spacing:0;}
 
-.form-input {
-	padding-left: 10px;
-}
+.logged_in { border-color:#000 !important; color:#000 !important;}
