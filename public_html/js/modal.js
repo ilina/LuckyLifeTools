@@ -21,6 +21,13 @@ $(document).ready(function() {
         loginModal.style.display = "none";
 		return false;
 	})
+
+	$(document).keyup(function(e) {
+	     if (e.keyCode == 27) { // escape key maps to keycode `27`
+	        signupModal.style.display = "none";
+	        loginModal.style.display = "none";
+	    }
+	});
 });
 // When the user clicks the button, open the modal
 
