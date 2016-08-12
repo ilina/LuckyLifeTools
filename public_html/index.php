@@ -36,9 +36,8 @@
             }
           ?>
         </nav>
-        <div class="logo">
-            <img src="images/lucky_logo.png">
-            <b>life tools</b></div>
+      <div class="logo">
+      	 <a href="index.php"></a>
       </div>
     </header>
     <div class="intro_content"> 
