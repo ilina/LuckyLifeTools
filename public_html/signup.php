@@ -37,15 +37,14 @@ if (isset($_POST['btn-signup']) != "") {
       // if succeed in signing up
       if ($results) {
         echo "mail being sent";
-        // setup up the email account
-/*        $transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
+        /*
+        // For WAMP
+        $transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
           ->setUsername('hello@luckylifetools.com')
-          ->setPassword('BoldSky');
-*/
-        $smtp_host_ip = gethostbyname('smtp.gmail.com');
-        $transport = Swift_SmtpTransport::newInstance("box314.bluehost.com", 26, 'ssl')
-          ->setUsername('test@acnenomoretoday.com')
-          ->setPassword('!');
+          ->setPassword('');
+        */
+        // For prod
+        $transport = Swift_SmtpTransport::newInstance("localhost", 25);
 
         // setup the mailing class
         $mailer = Swift_Mailer::newInstance($transport);
@@ -53,7 +52,7 @@ if (isset($_POST['btn-signup']) != "") {
           You're almost there to access your free tools from LuckyLifeTools! \n
           All you have to do is click the link below to verify your account and 
           gain access to all of your FREE tools! \n
-          http://localhost/LuckyLifeTools/public_html/verify.php?a=$refid
+          http://luckylifetools.com/public_html/verify.php?a=$refid
           \n 
           Have a LUCKY day!\n
           Ilina
@@ -62,8 +61,8 @@ if (isset($_POST['btn-signup']) != "") {
         $message = Swift_Message::newInstance()
           ->setSubject('LuckyLifeTools - Verification')
           ->setFrom(array('hello@luckylifetools.com' => 'Ilina'))
-          //->setTo(array($email))
-          ->setTo('iamjoshchang@gmail.com')
+          ->setTo(array($email))
+          //->setTo('iamjoshchang@gmail.com')
           ->setBody($body);
 
         // send the mail
@@ -78,9 +77,9 @@ if (isset($_POST['btn-signup']) != "") {
 
         $ch = curl_init();
         //curl_setopt($ch, CURLOPT_URL,"https://us13.api.mailchimp.com/3.0/lists/<list-id>/members/$md5");
-        curl_setopt($ch, CURLOPT_URL,"https://us4.api.mailchimp.com/3.0/lists/bbc5c7a16a/members/$md5");
+        curl_setopt($ch, CURLOPT_URL,"https://us4.api.mailchimp.com/3.0/lists/f36012a7a1/members/$md5");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($ch, CURLOPT_USERPWD, "a:-us4");  
+        curl_setopt($ch, CURLOPT_USERPWD, "a:07bd4839c4d2436fc35afc4e28946864-us13");  
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLINFO_HEADER_OUT, true);
@@ -134,9 +133,10 @@ if (isset($_POST['btn-signup']) != "") {
       <a href="login.php" class="login login-modal">Login</a>
       <a href="signup.php" class="signup signup-modal">Sign Up FREE</a>
     </nav>
-    <div class="logo">
-            <a href="index.php"></a>
-    </div>
+    <a href="index.php" class="logo">
+      <img src="images/lucky_logo.png">
+      <b>life tools</b></div>
+    </a>
   </header> 
 
   <div class="container printable" id="LifePlanner">

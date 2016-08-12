@@ -24,13 +24,14 @@ if (isset($_POST['btn-forgot']) != "") {
 			$msg = 'Oops something went wrong! Try and reset your email again!';
 		} else {
 			$msg = 'Your new password has been sent to your email!';
-			/*$transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
+			/*
+			// For WAMP
+			$transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
         ->setUsername('hello@luckylifetools.com')
-        ->setPassword('BoldSky');
-		*/
-      $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-      ->setUsername('iamjoshchang@gmail.com')
-      ->setPassword('');
+        ->setPassword('');
+		  */
+      // For prod
+      $transport = Swift_SmtpTransport::newInstance("localhost", 25);
 
       // setup the mailing class
       $mailer = Swift_Mailer::newInstance($transport);
@@ -45,7 +46,7 @@ if (isset($_POST['btn-forgot']) != "") {
       $message = Swift_Message::newInstance()
         ->setSubject('LuckyLifeTools - Password Reset')
         ->setFrom(array('hello@luckylifetools.com' => 'Ilina'))
-        ->setTo(array('iamjoshchang@gmail.com'))
+        ->setTo(array($email))
         ->setBody($body);
 
       // send the mail
