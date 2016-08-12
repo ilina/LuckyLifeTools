@@ -274,7 +274,7 @@
   	<section class="container">
       	<header>
           	<h2>Printable Quotes</h2>
-            <p>Print out these inspiring quotes and put them in a visible place to be inspired every day.
+            <p>Print out these inspiring quotes and put them in a visible place to be inspired every day. 
             <?php
               if (!$logged_in) {
             ?>
