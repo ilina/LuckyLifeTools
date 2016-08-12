@@ -1,7 +1,5 @@
 <?php
   include_once 'snippets/checked-login.php';
-  include_once 'snippets/login-modal.php';
-  include_once 'snippets/signup-modal.php';
 ?>
 
 <!DOCTYPE html>
@@ -691,7 +689,10 @@
           </div>
       </section>
   </div> 
-
+  <?php
+    include_once 'snippets/login-modal.php';
+    include_once 'snippets/signup-modal.php';
+  ?>
     
   <footer> 
       <div class="sm">

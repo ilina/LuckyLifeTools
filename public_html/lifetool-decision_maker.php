@@ -1,7 +1,5 @@
 <?php
   include_once 'snippets/checked-login.php';
-  include_once 'snippets/login-modal.php';
-  include_once 'snippets/signup-modal.php';
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +106,10 @@
         <p><b>BINDER FORMAT:</b> No extra margin.</p>
     </div> 
 </div>
-
+<?php
+      include_once 'snippets/login-modal.php';
+      include_once 'snippets/signup-modal.php';
+    ?>
 <footer>
   <div class="sm">
         	<a href="http://www.facebook.com/luckylifetools/"><img src="images/social/social_facebook.svg"></a> 

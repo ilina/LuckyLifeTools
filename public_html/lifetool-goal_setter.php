@@ -1,7 +1,5 @@
 <?php
   include_once 'snippets/checked-login.php';
-  include_once 'snippets/login-modal.php';
-  include_once 'snippets/signup-modal.php';
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +90,10 @@
     Copyright  © <strong>LuckyLifeTools.com</strong> - All rights reserved. 
     <span class="terms"><a href="https://www.yoledo.com/pages/terms" target="_blank">Terms</a> | <a href="https://www.yoledo.com/pages/privacy" target="_blank">Privacy</a></span>
     </footer>
+    <?php
+      include_once 'snippets/login-modal.php';
+      include_once 'snippets/signup-modal.php';
+    ?>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="js/functions.js"></script>

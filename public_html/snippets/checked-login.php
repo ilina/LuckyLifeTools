@@ -3,8 +3,6 @@
 ob_start();
 session_start();
 
-var_dump($_SESSION);
-
 // returns a variable to check if the user is valid
 $logged_in = false;
 if (isset($_SESSION['user'])) {
@@ -23,4 +21,3 @@ if (isset($_SESSION['user'])) {
     $logged_in = true;
   }
 }
-echo $logged_in;

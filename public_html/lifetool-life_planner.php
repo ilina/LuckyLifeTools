@@ -1,7 +1,5 @@
 <?php
   include_once 'snippets/checked-login.php';
-  include_once 'snippets/login-modal.php';
-  include_once 'snippets/signup-modal.php';
 ?>
 
 <!DOCTYPE html>
@@ -101,6 +99,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/modal.js"></script>
-    
+    <?php
+      include_once 'snippets/login-modal.php';
+      include_once 'snippets/signup-modal.php';
+    ?>
 </body>
 </html>
