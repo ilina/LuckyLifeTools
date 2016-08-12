@@ -204,7 +204,7 @@
                   <li>
                     <a href="lifetool-annual_review.php">
                       <object type="image/svg+xml" data="images/icon-annual_review.svg"></object> 
-                      <h3>Annual Review</h3>
+                      <h3>Life Review</h3>
                     </a>
                   </li>
               </ul>
@@ -247,7 +247,7 @@
                   <li>
                	    <a href="lifetool-happiness_booster.php">
                       <object type="image/svg+xml" data="images/icon-happiness.svg"></object>  
-                      <h3>Happiness Booster</h3>
+                      <h3>Mood Booster</h3>
                     </a>
                   </li> 
           </ul>
