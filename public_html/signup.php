@@ -3,6 +3,9 @@
 include_once 'snippets/form-check-login.php';
 include_once 'snippets/connect.php';
 require_once 'lib/swift_required.php';
+include_once 'snippets/login-modal.php';
+include_once 'snippets/signup-modal.php';
+
 // checks to see if the user clicked the logged in button
 // and redirected back to the same page
 $msg = '';
@@ -28,15 +31,21 @@ if (isset($_POST['btn-signup']) != "") {
 
     // Creates a db entry for the user if it doesn't exist
     if (!$row) {
+      // get over server sending problem
       $refid = uniqid("", true);
       $results = $db->query("INSERT INTO users(email,password,refid,verified) VALUES('$email', '$password', '$refid', 0)");
       // if succeed in signing up
       if ($results) {
         echo "mail being sent";
         // setup up the email account
-        $transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
+/*        $transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
           ->setUsername('hello@luckylifetools.com')
-          ->setPassword('<email password>');
+          ->setPassword('BoldSky');
+*/
+        $smtp_host_ip = gethostbyname('smtp.gmail.com');
+        $transport = Swift_SmtpTransport::newInstance("box314.bluehost.com", 26, 'ssl')
+          ->setUsername('test@acnenomoretoday.com')
+          ->setPassword('!');
 
         // setup the mailing class
         $mailer = Swift_Mailer::newInstance($transport);
@@ -53,7 +62,8 @@ if (isset($_POST['btn-signup']) != "") {
         $message = Swift_Message::newInstance()
           ->setSubject('LuckyLifeTools - Verification')
           ->setFrom(array('hello@luckylifetools.com' => 'Ilina'))
-          ->setTo(array($email))
+          //->setTo(array($email))
+          ->setTo('iamjoshchang@gmail.com')
           ->setBody($body);
 
         // send the mail
@@ -67,9 +77,10 @@ if (isset($_POST['btn-signup']) != "") {
         $_SESSION['temp-time'] = date('Y-m-d H:i:s', strtotime($date->format('Y-m-d H:i:s')));
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,"https://us13.api.mailchimp.com/3.0/lists/<list-id>/members/$md5");
+        //curl_setopt($ch, CURLOPT_URL,"https://us13.api.mailchimp.com/3.0/lists/<list-id>/members/$md5");
+        curl_setopt($ch, CURLOPT_URL,"https://us4.api.mailchimp.com/3.0/lists/bbc5c7a16a/members/$md5");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($ch, CURLOPT_USERPWD, "a:07bd4839c4d2436fc35afc4e28946864-us13");  
+        curl_setopt($ch, CURLOPT_USERPWD, "a:-us4");  
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLINFO_HEADER_OUT, true);
@@ -113,14 +124,15 @@ if (isset($_POST['btn-signup']) != "") {
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
 <body class="internal">
 
   <header class="menu fixate">
     <nav class="session">
-      <a href="login.php" class="login">Login</a>
-      <a href="signup.php" class="signup">Sign Up FREE</a>
+      <a href="login.php" class="login login-modal">Login</a>
+      <a href="signup.php" class="signup signup-modal">Sign Up FREE</a>
     </nav>
     <a href="index.php" class="logo">
       <img src="images/lucky_logo.png">
@@ -179,7 +191,7 @@ if (isset($_POST['btn-signup']) != "") {
       </div>
     </form>
 
-    <a href="/login.php">Login Here...</a>
+    <a href="login.php">Login Here...</a>
 
   </div>
 
@@ -192,6 +204,9 @@ if (isset($_POST['btn-signup']) != "") {
     Copyright  © <strong>LuckyLifeTools.com</strong> - All rights reserved. 
     <span class="terms"><a href="https://www.yoledo.com/pages/terms" target="_blank">Terms</a> | <a href="https://www.yoledo.com/pages/privacy" target="_blank">Privacy</a></span>
   </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="js/modal.js"></script>
         
 </body>
 </html>

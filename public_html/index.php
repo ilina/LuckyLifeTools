@@ -1,5 +1,7 @@
 <?php
   include_once 'snippets/checked-login.php';
+  include_once 'snippets/login-modal.php';
+  include_once 'snippets/signup-modal.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +15,12 @@
   <link rel="stylesheet" href="css/normalize.css"> 
   <link rel="stylesheet" href="css/skeleton.css">   
   <link rel="stylesheet" href="css/styles.css">  
-  <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />   
+  <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />  
+  <link type="text/css" rel="stylesheet" href="css/modal.css" />
 
 
 </head>
+
 <body>
   <div class="intro">
 	  <header class="menu" id="headerfix"> 
@@ -26,12 +30,12 @@
           <?php 
             if ($logged_in) {
           ?>
-            <a href="logout.php" class="login logged_in">Log Out</a>
+            <a href="logout.php" id="logout" class="login logged_in">Log Out</a>
           <?php
             } else {
           ?>
-            <a href="login.php" class="login">Login</a>
-            <a href="signup.php" class="signup">Sign Up FREE</a>
+            <a href="/login.php" class="login login-modal">Login</a>
+            <a href="#" class="signup signup-modal">Sign Up FREE</a>
           <?php
             }
           ?>
@@ -167,28 +171,64 @@
   	<section class="container">
       	<header>
           	<h2>Printable Life Tools </h2>
-          	<p>These  free PDF printable  tools will help you plan and examine your life. <a href="#">Sign up</a> (quick and free) to download.</p>
-            <form method="get" action="pdf/LuckyLifeTools-printables.pdf" class="download_all">
-                  <button type="submit" class="button-primary">Download all Tools</button>
-            </form>
+          	<p>These  free PDF printable  tools will help you plan and examine your life. <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p>
+            <?php
+              if ($logged_in) {
+            ?>
+              <form method="get" action="pdf/LuckyLifeTools-printables.pdf" class="download_all">
+                    <button type="submit" class="button-primary">Download all Tools</button>
+              </form>
+            <?php
+              }
+            ?>
           </header>
         <div class="row">
               <ul class="four columns">
                   <h4>Vision:</h4> 
                   <li> 
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
                       <a href="lifetool-life_plan.php">
+                    <?php
+                      }
+                    ?>
                          <object type="image/svg+xml" data="images/icon-swot.svg"></object>
                          <h3>Life  Plan</h3>
                       </a>
                   </li>
                   <li>
-                    <a href="lifetool-goal_setter.php">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="#" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
+                      <a href="lifetool-goal_setter.php">
+                    <?php
+                      }
+                    ?>
                         <object type="image/svg+xml" data="images/icon-goal_planner.svg"></object>  
                         <h3>Goal Setter</h3>
                       </a>
                   </li>
                   <li>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="#" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
                       <a href="lifetool-annual_review.php">
+                    <?php
+                      }
+                    ?>
                         <object type="image/svg+xml" data="images/icon-annual_review.svg"></object> 
                         <h3>Annual Review</h3>
                       </a>
@@ -197,19 +237,49 @@
           <ul class="four columns">
                   <h4>Action Plan:</h4> 
                   <li>
-                    <a href="lifetool-schedule.php">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="#" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
+                      <a href="lifetool-schedule.php">
+                    <?php
+                      }
+                    ?>
                          <object type="image/svg+xml" data="images/icon-time_capsule.svg"></object>  
                          <h3>Schedule &amp; To-do</h3>
                       </a>
                   </li>
                   <li>
-                    <a href="lifetool-calendars.php">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="#" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
+                      <a href="lifetool-calendars.php">
+                    <?php
+                      }
+                    ?>
                         <object type="image/svg+xml" data="images/icon-schedule.svg"></object>  
                         <h3>Calendars</h3>
                       </a>
                   </li>
                   <li>
-             		  <a href="lifetool-habit_builder.php">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="#" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
+                 		  <a href="lifetool-habit_builder.php">
+                    <?php
+                      }
+                    ?>
                          <object type="image/svg+xml" data="images/icon-self.svg"></object> 
                          <h3>Habit Builder</h3>
                   	</a>
@@ -218,20 +288,50 @@
               <ul class="four columns">
               <h4>Mind tools:</h4> 
                   <li>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="#" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
                       <a href="lifetool-life_balancer.php">
+                    <?php
+                      }
+                    ?>
                          <object type="image/svg+xml" data="images/icon-life_balance.svg">
                          </object>
                          <h3>Life Balance</h3>
                       </a>
                   </li>
                   <li>
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="#" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
                       <a href="lifetool-decision_maker.php">
+                    <?php
+                      }
+                    ?>
                          <object type="image/svg+xml" data="images/icon-decision_maker.svg"></object>  
                          <h3>Decision Maker</h3>
                       </a>
                   </li>
                   <li>
-                	   <a href="lifetool-happiness_booster.php">
+                    <?php
+                      if (!$logged_in) {
+                    ?>
+                      <a href="#" class="login-modal">
+                    <?php
+                      } else {
+                    ?>
+                 	    <a href="lifetool-happiness_booster.php">
+                    <?php
+                      }
+                    ?>
                        <object type="image/svg+xml" data="images/icon-happiness.svg"></object>  
                        <h3>Happiness Booster</h3>
                      </a>
@@ -260,11 +360,17 @@
   	<section class="container">
       	<header>
           	<h2>Printable Quotes</h2>
-          	<p>Print out these inspiring quotes and put them in a visible place to be inspired every day. <a href="#">Sign up</a> (quick and free) to download.</p> 
+          	<p>Print out these inspiring quotes and put them in a visible place to be inspired every day. <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p> 
           </header>
-            <form method="get" action="quotes/LuckyLifeTools-quotes.pdf" class="download_all">
-                  <button type="submit" class="button-primary">Download all Quotes</button>
-            </form>
+            <?php
+              if ($logged_in) {
+            ?>
+              <form method="get" action="quotes/LuckyLifeTools-quotes.pdf" class="download_all">
+                    <button type="submit" class="button-primary">Download all Quotes</button>
+              </form>
+            <?php
+              }
+            ?>
           <div class="above950">
           	<div class="row">
               <ul> 
@@ -272,7 +378,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -287,7 +393,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -302,7 +408,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -317,7 +423,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -332,7 +438,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -347,7 +453,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -366,7 +472,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -381,7 +487,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -396,7 +502,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -411,7 +517,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -426,7 +532,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -441,7 +547,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -462,7 +568,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -477,7 +583,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -492,7 +598,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -507,7 +613,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -526,7 +632,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -541,7 +647,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -556,7 +662,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -571,7 +677,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -590,7 +696,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -605,7 +711,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -618,7 +724,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -633,7 +739,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -648,7 +754,7 @@
                     <?php
                       if (!$logged_in) {
                     ?>
-                      <a href="login.php">
+                      <a href="#" class="login-modal">
                     <?php
                       } else {
                     ?>
@@ -677,6 +783,7 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   <script src="js/functions.js"></script>      
+  <script src="js/modal.js"></script>
   
   <a href="#0" class="cd-top">Top</a>
   

@@ -1,5 +1,7 @@
 <?php
   include_once 'snippets/checked-login.php';
+  include_once 'snippets/login-modal.php';
+  include_once 'snippets/signup-modal.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +16,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
 <body class="internal">
@@ -27,8 +30,8 @@
         <?php
           } else {
         ?>
-          <a href="login.php" class="login">Login</a>
-          <a href="signup.php" class="signup">Sign Up FREE</a>
+          <a href="login.php" class="login-modal login">Login</a>
+          <a href="signup.php" class="signup signup-modal">Sign Up FREE</a>
         <?php
           }
         ?>
@@ -98,6 +101,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/modal.js"></script>
     
 </body>
 </html>
