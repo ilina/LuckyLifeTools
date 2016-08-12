@@ -168,10 +168,11 @@
   	<section class="container">
       	<header>
           	<h2>Printable Life Tools </h2>
+            <p>These  free PDF printable  tools will help you plan and examine your life. 
             <?php
               if (!$logged_in) {
             ?>
-          	  <p>These  free PDF printable  tools will help you plan and examine your life. <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p>
+          	  <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p>
             <?php
               }
             ?>
@@ -273,10 +274,11 @@
   	<section class="container">
       	<header>
           	<h2>Printable Quotes</h2>
+            <p>Print out these inspiring quotes and put them in a visible place to be inspired every day.
             <?php
               if (!$logged_in) {
             ?>
-            	<p>Print out these inspiring quotes and put them in a visible place to be inspired every day. <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p> 
+            	 <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p> 
             <?php
               }
             ?>
