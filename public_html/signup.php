@@ -77,7 +77,7 @@ if (isset($_POST['btn-signup']) != "") {
 
         $ch = curl_init();
         //curl_setopt($ch, CURLOPT_URL,"https://us13.api.mailchimp.com/3.0/lists/<list-id>/members/$md5");
-        curl_setopt($ch, CURLOPT_URL,"https://us4.api.mailchimp.com/3.0/lists/f36012a7a1/members/$md5");
+        curl_setopt($ch, CURLOPT_URL,"https://us13.api.mailchimp.com/3.0/lists/f36012a7a1/members/$md5");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
         curl_setopt($ch, CURLOPT_USERPWD, "a:07bd4839c4d2436fc35afc4e28946864-us13");  
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
