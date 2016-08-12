@@ -63,8 +63,7 @@ if (isset($_POST['btn-login']) != "") {
 	</header> 
 
 	<div class="container printable" id="LifePlanner">
-		<object type="image/svg+xml" data="images/icon-schedule.svg"></object>
-		<h1>Login
+	  <h1>Login
     	<p class="subheading">Sign in to get access to your Life Tools.</p>
     </h1>
 
