@@ -108,8 +108,8 @@ if (isset($_POST['btn-login']) != "") {
 
 		<a href="signup.php">Sign Up Here...</a>
 		<hr />
-		<a href="forgot.php">Forgot your password></a>
-
+		<a href="forgot.php">Forgot your password?</a>
+		<hr />
   </div>
 
   <footer>    

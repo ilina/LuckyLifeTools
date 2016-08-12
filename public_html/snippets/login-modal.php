@@ -30,8 +30,10 @@
 				<hr />
 			</div>
 		</form>
-
 		<a href="signup.php" class="signup-modal">Sign Up Here...</a>
+		<hr />
+		<a href="forgot.php">Forgot your password?</a>
+		<hr />
 	  </div>
 	  <div class="modal-footer">
 	    <h3>Modal Footer</h3>

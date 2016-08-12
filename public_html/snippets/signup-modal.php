@@ -38,6 +38,9 @@
 	      </div>
 	    </form>
 	    <a href="login.php" class="login-modal">Login Here...</a>
+		<hr />
+		<a href="forgot.php">Forgot your password?</a>
+		<hr />
 	  </div>
 	  <div class="modal-footer">
 	    <h3>Modal Footer</h3>

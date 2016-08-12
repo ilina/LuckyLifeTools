@@ -11,8 +11,6 @@ if (isset($_POST['btn-signup']) != "") {
   $email = $_POST['email'];
   $pass = $_POST['password'];
   $pass2 = $_POST['password2'];
-  echo $pass;
-  echo $pass2;
 
   if (strcmp($pass, $pass2) === 0) {
     $email = strip_tags(trim($email));
@@ -34,7 +32,6 @@ if (isset($_POST['btn-signup']) != "") {
       $results = $db->query("INSERT INTO users(email,password,refid,verified) VALUES('$email', '$password', '$refid', 0)");
       // if succeed in signing up
       if ($results) {
-        echo "mail being sent";
         /*
         // For WAMP
         $transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
@@ -50,7 +47,7 @@ if (isset($_POST['btn-signup']) != "") {
           You're almost there to access your free tools from LuckyLifeTools! \n
           All you have to do is click the link below to verify your account and 
           gain access to all of your FREE tools! \n
-          http://luckylifetools.com/public_html/verify.php?a=$refid
+          http://luckylifetools.com/verify.php?a=$refid
           \n 
           Have a LUCKY day!\n
           Ilina
@@ -189,7 +186,9 @@ if (isset($_POST['btn-signup']) != "") {
     </form>
 
     <a href="login.php">Login Here...</a>
-
+    <hr />
+    <a href="forgot.php">Forgot your password></a>
+    <hr />
   </div>
 
   <footer>    

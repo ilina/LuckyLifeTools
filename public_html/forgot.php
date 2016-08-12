@@ -7,7 +7,6 @@ require_once 'lib/swift_required.php';
 $msg = '';
 if (isset($_POST['btn-forgot']) != "") { 
 	$email = $_POST['email'];
-	echo $email;
 	$results = $db->query("SELECT * FROM users WHERE email='$email'");
   $row = $results->fetchArray();
 
