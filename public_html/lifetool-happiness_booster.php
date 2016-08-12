@@ -46,7 +46,7 @@
        </div>  
         <div class="container printable" id="LifePlanner">
           <object type="image/svg+xml" data="images/icon-happiness.svg"></object>
-          <h1>Happiness Booster
+          <h1>Mood Booster
             <p class="subheading">Use this tool to uplift your spirits whenever you're in a blah mood.</p></h1>
           <div class="row tool_pages"><img src="images/yoledo-lifebalance.jpg" width="449" height="310" alt="Yoledo Life Balance printable"></div>
         <p>Text</p> 
@@ -93,7 +93,7 @@
       <?php
         } else {
       ?>
-  		<form method="get" action="pdf/lucky_printable-happiness_booster.pdf">
+  		<form method="get" action="pdf/LuckyLifeTool-printable-MoodBooster.pdf">
 			<button type="submit" class="button-primary">Download Printable</button>
         </form>
       <?php

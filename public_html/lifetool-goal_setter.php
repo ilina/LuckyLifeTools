@@ -73,7 +73,7 @@
       <?php
         } else {
       ?>
-  		<form method="get" action="pdf/lucky_printable-goal_setter.pdf">
+  		<form method="get" action="pdf/LuckyLifeTool-printable-GoalSetter.pdf">
 			<button type="submit" class="button-primary">Download Printable</button>
         </form>
 	<div class="format">

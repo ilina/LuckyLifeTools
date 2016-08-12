@@ -46,8 +46,8 @@
        </div>  
 <div class="container printable" id="LifePlanner">
   <object type="image/svg+xml" data="images/icon-annual_review.svg"></object>
-  <h1>Annual Review
-          <p class="subheading">Reflect on your progress over the past year, and set goals for the next.</p></h1>
+  <h1>Review
+    <p class="subheading">Reflect on your progress over the past year, and set goals for the next.</p></h1>
           <div class="row tool_pages"><img src="images/pages-annual_review.jpg" width="494" height="261" alt="Yoledo Annual Review"></div>
         <p>The Annual Review is a year-end check-in with your life, designed to help you gain clarity and focus on   how far you've come, where you are now in life, and where you're headed. </p> 
         <div class="tool_content">
@@ -97,7 +97,7 @@
       <?php
         } else {
       ?>
-  		  <form method="get" action="pdf/lucky_printable-Annual_review.pdf">
+  		  <form method="get" action="pdf/LuckyLifeTool-printable-Review.pdf">
           <button type="submit" class="button-primary">Download Printable</button>
         </form>
       <?php

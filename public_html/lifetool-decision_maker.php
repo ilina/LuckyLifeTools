@@ -96,7 +96,7 @@
       <?php
         } else {
       ?>
-  		<form method="get" action="pdf/lucky_printable-decision_maker.pdf">
+  		<form method="get" action="pdf/LuckyLifeTool-printable-DecisionMaker.pdf">
 			<button type="submit" class="button-primary">Download Printable</button>
         </form>
       <?php

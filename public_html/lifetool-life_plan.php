@@ -97,7 +97,7 @@
       <?php
         } else {
       ?>
-  		<form method="get" action="pdf/lucky_printable-life_plan.pdf">
+  		<form method="get" action="pdf/LuckyLifeTool-printable-LifePlan.pdf">
 			<button type="submit" class="button-primary">Download Printable</button>
         </form>
       <?php
