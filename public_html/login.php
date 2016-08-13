@@ -66,6 +66,9 @@ if (isset($_POST['btn-login']) != "") {
     </div>
 	</header> 
 
+	<div class="breadcrumb">
+    	<a href="index.php#printables">Back to all Life Tools</a> 
+    </div>  
 	<div class="container" id="LifePlanner">
 	  <h1>Login
     	<p class="subheading">Sign in to  access to your Life Tools.</p>

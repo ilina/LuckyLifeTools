@@ -81,7 +81,9 @@ if (isset($_POST['btn-change']) != "") {
       <a href="index.php"></a>
     </div>
 	</header> 
-
+	<div class="breadcrumb">
+    	<a href="index.php#printables">Back to all Life Tools</a> 
+    </div>  
 	<div class="container printable" id="LifePlanner">
 	  <h1>Settings
     	<p class="subheading">Change your password</p>
@@ -105,7 +107,7 @@ if (isset($_POST['btn-change']) != "") {
 		  <div class="col-md-12">
 				<div class="input-group">
 					<div class="row">
-						<div class="two columns">Current password:</div> 
+						<div class="three columns">Current password:</div> 
 						<div class="six columns form-input">
 							<input type="password" name="old-password" placeholder="Your Current Password" required />
 						</div>
@@ -113,15 +115,15 @@ if (isset($_POST['btn-change']) != "") {
 				</div>
 
 				<div class="row">
-					<div class="two columns">New Password:</div>
+					<div class="three columns">New Password:</div>
 					<div class="six columns form-input">
 						<input type="password" name="password" placeholder="Your new password" required />
 					</div>
 				</div>
 				<div class="row">
-					<div class="two columns">New password (confirm):</div>
+					<div class="three columns">New password (confirm):</div>
 					<div class="six columns form-input">
-						<input type="password" name="password2" placeholder="Your New Password (confirm)" required />
+						<input type="password" name="password2" placeholder="Re-enter to confirm" required />
 					</div>
 				</div>
 				<hr />

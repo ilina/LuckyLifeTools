@@ -142,8 +142,10 @@ if (isset($_POST['btn-signup']) != "") {
     <div class="logo">
       <a href="index.php"></a>
     </div>
-  </header> 
-
+  </header>
+	<div class="breadcrumb">
+    	<a href="index.php#printables">Back to all Life Tools</a> 
+    </div>   
   <div class="container" id="LifePlanner">
     <h1>Sign Up
       <p class="subheading">Sign up to  access to the Life Tools.</p>
