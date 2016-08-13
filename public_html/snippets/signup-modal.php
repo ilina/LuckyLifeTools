@@ -33,7 +33,7 @@
 	        </div>
 	        
 	        <hr />
-	        <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
+	        <button type="submit" class="btn btn-block button-primary" name="btn-signup">Sign Up</button>
 	        <hr />
 	      </div>
 	    </form>
@@ -41,9 +41,6 @@
 		<hr />
 		<a href="forgot.php">Forgot your password?</a>
 		<hr />
-	  </div>
-	  <div class="modal-footer">
-	    <h3>Modal Footer</h3>
-	  </div>
+	  </div> 
 	</div>
 </div>

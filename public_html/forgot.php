@@ -115,7 +115,7 @@ if (isset($_POST['btn-forgot']) != "") {
           </div>
         </div>
         <hr />
-        <button type="submit" class="btn btn-block btn-primary" name="btn-forgot">Reset Password</button>
+        <button type="submit" class="btn btn-block button-primary" name="btn-forgot">Reset Password</button>
         <hr />
       </div>
     </form>

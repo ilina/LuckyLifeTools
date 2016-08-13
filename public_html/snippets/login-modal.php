@@ -26,7 +26,7 @@
 				</div>
 				
 				<hr />
-				<button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
+				<button type="submit" class="btn btn-block button-primary" name="btn-login">Login</button>
 				<hr />
 			</div>
 		</form>
@@ -34,9 +34,6 @@
 		<hr />
 		<a href="forgot.php">Forgot your password?</a>
 		<hr />
-	  </div>
-	  <div class="modal-footer">
-	    <h3>Modal Footer</h3>
-	  </div>
+	  </div> 
 	</div>
 </div>
