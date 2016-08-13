@@ -133,7 +133,7 @@ if (isset($_POST['btn-signup']) != "") {
     </div>
   </header> 
 
-  <div class="container printable" id="LifePlanner">
+  <div class="container" id="LifePlanner">
     <h1>Sign Up
       <p class="subheading">Sign up to  access to the Life Tools.</p>
     </h1>

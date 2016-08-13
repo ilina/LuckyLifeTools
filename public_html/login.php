@@ -62,7 +62,7 @@ if (isset($_POST['btn-login']) != "") {
     </div>
 	</header> 
 
-	<div class="container printable" id="LifePlanner">
+	<div class="container" id="LifePlanner">
 	  <h1>Login
     	<p class="subheading">Sign in to  access to your Life Tools.</p>
     </h1>

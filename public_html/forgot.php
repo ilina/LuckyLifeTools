@@ -84,7 +84,7 @@ if (isset($_POST['btn-forgot']) != "") {
     </div>
   </header> 
 
-  <div class="container printable" id="LifePlanner">
+  <div class="container" id="LifePlanner">
     <h1>Forgot your password?
       <p class="subheading">Enter your email to reset your password</p>
     </h1>
