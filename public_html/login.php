@@ -26,7 +26,11 @@ if (isset($_POST['btn-login']) != "") {
  			$msg = "Looks like we still haven\'t received your email verification. Please click the link in the email we sent you to verify your account.";
  		} else {
 	 		$_SESSION['user'] = $row['email'];
-	 		header("Location: index.php");
+	 		$location = 'index.php';
+	 		if (isset($_POST['location'])) {
+	 			$location = $_POST['location'];
+	 		}
+	 		header("Location: $location");
 	 	}
  	} else {
  		$msg = "Oops, we don\'t recognize this info. Please check your email or password and try again.";
@@ -100,6 +104,13 @@ if (isset($_POST['btn-login']) != "") {
 				</div>
 				
 				<hr />
+				<?php
+					$location = 'index.php';
+					if (isset($_POST['location'])) {
+						$location = $_POST['location'];
+					}
+				?>
+				<input type="hidden" name="location" value=<?php echo $location ?> />
 				<button type="submit" class="btn btn-block button-primary" name="btn-login">Sign In</button>
 				<p>Are you a first-time visitor? <a href="signup.php">Sign Up Here...</a>
                 </p>

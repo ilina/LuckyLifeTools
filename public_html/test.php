@@ -20,7 +20,7 @@
 	// send the mail
 	$mailer->send($message);
 */
-
+/*
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"https://us4.api.mailchimp.com/3.0/lists/bbc5c7a16a/members/20dbbf20d91106a9377bb671ba83f381");
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
@@ -41,3 +41,9 @@ print_r($info['request_header']);
 var_dump($resp);
 curl_close($ch);
 ?>
+*/
+
+echo 'http://'. $_SERVER['SERVER_NAME'] . '\n';
+
+$location = $_SERVER['REQUEST_URI'];
+//header("Location: $location");

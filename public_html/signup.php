@@ -6,6 +6,11 @@ require_once 'lib/swift_required.php';
 
 // checks to see if the user clicked the logged in button
 // and redirected back to the same page
+$location = 'index.php';
+if (isset($_POST['location'])) {
+  $location = $_POST['location'];
+}
+
 $msg = '';
 if (isset($_POST['btn-signup']) != "") { 
   $email = $_POST['email'];
@@ -65,11 +70,6 @@ if (isset($_POST['btn-signup']) != "") {
         
         // TODO add email to mailchimp list
         
-        // set temp session  
-        $_SESSION['user'] = 'temp';
-        $date = new DateTime();
-        $_SESSION['temp-time'] = date('Y-m-d H:i:s', strtotime($date->format('Y-m-d H:i:s')));
-
         $ch = curl_init();
         //curl_setopt($ch, CURLOPT_URL,"https://us13.api.mailchimp.com/3.0/lists/<list-id>/members/$md5");
         curl_setopt($ch, CURLOPT_URL,"https://us13.api.mailchimp.com/3.0/lists/f36012a7a1/members/$md5");
@@ -86,12 +86,23 @@ if (isset($_POST['btn-signup']) != "") {
           echo 'error:' . curl_error($ch);
         }
         $info = curl_getinfo($ch);
-        print_r($info['request_header']);
+        //print_r($info['request_header']);
         // Close request to clear up some resources
-        var_dump($resp);
+        //var_dump($resp);
         curl_close($ch);
 
-        header("Location: index.php");
+        // set temp session  
+        $_SESSION['user'] = 'temp';
+        $date = new DateTime();
+        $_SESSION['temp-time'] = date('Y-m-d H:i:s', strtotime($date->format('Y-m-d H:i:s')));
+
+
+        $location = 'index.php';
+        if (isset($_POST['location'])) {
+          $location = $_POST['location'];
+        }
+
+        header("Location: $location");
       } else {
         $msg = 'Error in creating account';
       }
@@ -178,6 +189,7 @@ if (isset($_POST['btn-signup']) != "") {
         </div>
         
         <hr />
+        <input type="hidden" name="location" value=<?php echo $location ?> />
         <button type="submit" class="btn btn-block signup button-primary" name="btn-signup">Sign Up</button>
       </div>
     </form> 

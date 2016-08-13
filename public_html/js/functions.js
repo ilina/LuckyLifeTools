@@ -110,3 +110,11 @@ jQuery(document).ready(function($){
 
 });
 
+$(document).ready(function() {
+	// submit the logout form when the logout button is clicked
+	$('.logout-button').click(function() {
+		$('.logout-form').submit();
+		return false;
+	});
+	
+});

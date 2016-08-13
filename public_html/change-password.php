@@ -75,6 +75,7 @@ if (isset($_POST['btn-change']) != "") {
 
 	<header class="menu fixate">
 		<nav class="session">
+			<!-- No change password because we don't want to be re-directed back to here -->
       <a href="change-password.php" class="change-password">Change Password</a>
       <a href="logout.php" id="logout" class="login logged_in">Log Out</a>
 		</nav>
