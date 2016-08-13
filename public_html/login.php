@@ -23,13 +23,13 @@ if (isset($_POST['btn-login']) != "") {
  	if ($row && $password == $row['password']) {
  		// check if verified email
  		if (!$row['verified']) {
- 			$msg = "Please verify your account";
+ 			$msg = "Looks like we still haven\'t received your email verification. Please click the link in the email we sent you to verify your account.";
  		} else {
 	 		$_SESSION['user'] = $row['email'];
 	 		header("Location: index.php");
 	 	}
  	} else {
- 		$msg = "Incorrct email/password";
+ 		$msg = "Oops, we don\'t recognize this info. Please check your email or password and try again.";
  	}
 }
 
@@ -50,7 +50,7 @@ if (isset($_POST['btn-login']) != "") {
   <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
-<body class="internal">
+<body class="internal userpages">
 
 	<header class="menu fixate">
 		<nav class="session">
@@ -62,10 +62,9 @@ if (isset($_POST['btn-login']) != "") {
     </div>
 	</header> 
 
-	<div class="container printable" id="LifePlanner">
-		<object type="image/svg+xml" data="images/icon-schedule.svg"></object>
-		<h1>Login
-    	<p class="subheading">Sign in to get access to your Life Tools.</p>
+	<div class="container" id="LifePlanner">
+	  <h1>Login
+    	<p class="subheading">Sign in to  access to your Life Tools.</p>
     </h1>
 
     <?php
@@ -86,31 +85,30 @@ if (isset($_POST['btn-login']) != "") {
 		  <div class="col-md-12">
 				<div class="input-group">
 					<div class="row">
-						<div class="one columns">Email:</div> 
-						<div class="four columns form-input">
+						<div class="two columns">Email:</div> 
+						<div class="six columns form-input">
 							<input type="email" name="email" placeholder="Your Email" required />
 						</div>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="one columns">Password:</div>
-					<div class="four columns form-input">
+					<div class="two columns">Password:</div>
+					<div class="six columns form-input">
 						<input type="password" name="password" placeholder="Your Password" required />
 					</div>
 				</div>
 				
 				<hr />
-				<button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
-				<hr />
-			</div>
-		</form>
+				<button type="submit" class="btn btn-block button-primary" name="btn-login">Sign In</button>
+				<p>Are you a first-time visitor? <a href="signup.php">Sign Up Here...</a>
+                </p>
+	  </div>
+	  </form>
 
-		<a href="signup.php">Sign Up Here...</a>
+		
 		<hr />
-		<a href="forgot.php">Forgot your password?</a>
-		<hr />
-  </div>
+  <a href="forgot.php">Forgot your password?</a></div>
 
   <footer>    
     <div class="sm">

@@ -49,41 +49,10 @@
           <p class="subheading">Define your long-term vision for each area of your life & set your goals.</p>
   </h1>
           <div class="row tool_pages"><img src="images/pages-life_planner.jpg" width="512" height="269" alt="Yoledo Life Planner printable"></div>     
-      <h5>Heading</h5>
-          <p>text</p>
+      <h5>Life Plan Printable</h5>
+          <p>See the bigger picture.</p>
       <p>&nbsp;</p>
-      <div class="tool_content">
-        <h5>Heading</h5>
-        <p>text</p>
-        <div class="row categories">
-          <div class="four columns personal">
-            <h6>PERSONAL:</h6>
-            <p>Body</p>
-            <p>Spirit</p>
-            <p>Leisure</p>
-            <p>Lifestyle</p>
-          </div>
-          <div class="four columns social">
-            <h6>SOCIAL:</h6>
-            <p>Family</p>
-            <p>Friends</p>
-            <p>Community</p>
-            <p>Romance </p>
-          </div>
-          <div class="four columns professional">
-            <h6>PROFESSIONAL:</h6>
-            <p>Work</p>
-            <p>Money</p>
-            <p>Growth</p>
-            <p>Contribution</p>
-          </div>
-        </div>
-        <h5>Heading</h5>
-        <p>text</p>
-        <h5>Heading</h5>
-        <p>text</p>
-      </div>
-      <p>uidance to go through this process. It's totally FREE, and you can download after a quick sign up.</p>
+      <p> It's totally FREE, and you can download after a quick sign up.</p>
       <?php
         if (!$logged_in) {
       ?>

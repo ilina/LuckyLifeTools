@@ -5,7 +5,7 @@ if (!isset($_GET["a"])) {
 	header("Location: index.php");
 }
 
-$msg = 'Your account has been verified! Please <a href="login.php">login</a> to access your tools.';
+$msg = 'Thanks for verifing your account! <a href="login.php">Login here</a> to access the life tools.';
 
 $refid = $_GET["a"];
 $select_result = $db->query("SELECT * FROM users WHERE refid='$refid'");
@@ -15,10 +15,10 @@ if ($row) {
 	$update_result = $db->query("UPDATE users SET verified = 1 WHERE refid='$refid'");	
 	// verify if upodate was succsesful
 	if (!$update_result) {
-		$msg = 'Oops something went wrong! Try and visit the link from your email again!';
+		$msg = 'Oops, something went wrong... Please try and visit the link from your email again.';
 	}
 } else {
-	$msg = 'Oops something went wrong! Try and visit the link from your email again!';
+	$msg = 'Oops, something went wrong... Please try and visit the link from your email again.';
 }
 
 ?>
@@ -51,7 +51,6 @@ if ($row) {
   </header> 
 
   <div class="container printable" id="LifePlanner">
-    <object type="image/svg+xml" data="images/icon-schedule.svg"></object>
     <h1>
     	Verification
     </h1>

@@ -17,10 +17,13 @@
     position: relative;
     background-color: #fefefe;
     margin: auto;
-    padding: 0;
+    padding: 0 0 25px;
     border: 1px solid #888;
-    width: 60%;
+    width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+@media (max-width: 1000px) {
+	.modal-content { width: 80%;}
 }
 
 /* Add Animation */
@@ -36,9 +39,11 @@
 
 /* The Close Button */
 .close {
-    color: white;
+    color: #888; 
+	font-family: 'Varela Round', sans-serif;
+	cursor:pointer;
     float: right;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -51,11 +56,11 @@
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: #eee;
+	text-align:center;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {padding: 5px 30px;}
 
 .modal-footer {
     padding: 2px 16px;
@@ -63,3 +68,7 @@
     color: white;
 	display:none;
 }
+
+.modal h2 { padding: 25px 0 5px;}
+
+.modal .button-primary { margin: 20px 0; font-weight:bold;}

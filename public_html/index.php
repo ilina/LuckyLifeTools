@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body class="homepage">
   <div class="intro">
 	  <header class="menu" id="headerfix"> 
       <div class="menu_background"></div>
@@ -173,7 +173,7 @@
             <?php
               if (!$logged_in) {
             ?>
-          	  <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p>
+          	  <a href="#" class="signup-modal">Sign up</a> (quick and FREE) to download.</p>
             <?php
               }
             ?>
@@ -205,7 +205,7 @@
                   <li>
                     <a href="lifetool-annual_review.php">
                       <object type="image/svg+xml" data="images/icon-annual_review.svg"></object> 
-                      <h3>Annual Review</h3>
+                      <h3>Life Review</h3>
                     </a>
                   </li>
               </ul>
@@ -248,7 +248,7 @@
                   <li>
                	    <a href="lifetool-happiness_booster.php">
                       <object type="image/svg+xml" data="images/icon-happiness.svg"></object>  
-                      <h3>Happiness Booster</h3>
+                      <h3>Mood Booster</h3>
                     </a>
                   </li> 
           </ul>
@@ -275,11 +275,11 @@
   	<section class="container">
       	<header>
           	<h2>Printable Quotes</h2>
-            <p>Print out these inspiring quotes and put them in a visible place to be inspired every day.
+            <p>Print out these inspiring quotes and put them in a visible place to be inspired every day. 
             <?php
               if (!$logged_in) {
             ?>
-            	 <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p> 
+            	  <a href="#" class="signup-modal">Sign up</a> (quick and FREE) to download.</p> 
             <?php
               }
             ?>

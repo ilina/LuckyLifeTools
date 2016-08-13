@@ -226,8 +226,15 @@ ul { margin:0; padding:0;}
 h1 { text-align:center;}
 h2 { padding: 1.2em 0 0.5em; margin:0; font-size:3.3rem; text-align:center;}
 
-footer { padding:20px; background:#333; color:#777; text-align:center; position:relative;}
+footer {
+	padding:20px;
+	background:#333;
+	color:#777;
+	text-align:center;
+	position:relative;
+	font-size:90%;}
 footer a{ color:#777; padding:0 3px;}
+.internal footer { background: none;}
 
 .fixed { position:fixed;}
 h1 p { font-size: 0.48em; font-family: 'Source Sans Pro', sans-serif; letter-spacing:normal; padding:0.3em 0;}
@@ -583,7 +590,7 @@ button { font-weight:normal;}
 .professional h6{
 	background-position: 0 -81px;
 	color: #43afb5;}		
-.tool_pages{ width: 100%; overflow:auto; }	
+.tool_pages{ width: 100%; overflow:auto; display:none; }	
 .internal img{  margin:0 ;}	
 .tool_pages img { display:block; margin:0 auto 30px; float:none; }
 
@@ -829,7 +836,7 @@ h6 { text-transform:uppercase; font-size:0.9em; letter-spacing:1px; font-weight:
 	padding:80px 0 70px;
 	color:#617f86;}
  
-.required.email	{ width:100%;}
+.required.email	{ width:100%; border:2px solid #cbe6eb;}
 form { margin:0; padding:0;}
 
 .align_form { height:33px; margin-bottom:0;}
@@ -851,16 +858,17 @@ form { margin:0; padding:0;}
 .terms { display:none;}	
 
 footer img {
-	border-radius: 6px;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	padding:6px;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	padding:8px;
 	margin: 0 2px;
-	width: 35px;
+	width: 38px;
 	height:auto;
-	background:#787878;
-	opacity: 0.7;}
-.sm { position: absolute; right:15px; top:15px;}
+	background:#999;
+	opacity:0.7; }
+.homepage .sm { position: absolute;  right:15px;  top:15px;}
+
 
 .login_or_signup button { position:relative; top:5px;}
 .login_or_signup a { font-weight:bold;}
@@ -873,3 +881,10 @@ footer img {
 .form-input {
 	padding-left: 10px;
 }
+
+.alert { color:#e58847; padding:20px 0;}
+
+.userpages input[type=email],
+.userpages input[type=password] { width:100%;}
+
+.input-group {margin-top:30px;}

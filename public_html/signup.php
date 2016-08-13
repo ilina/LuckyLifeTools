@@ -43,14 +43,14 @@ if (isset($_POST['btn-signup']) != "") {
 
         // setup the mailing class
         $mailer = Swift_Mailer::newInstance($transport);
-        $body = "Hi,\n
-          You're almost there to access your free tools from LuckyLifeTools! \n
-          All you have to do is click the link below to verify your account and 
-          gain access to all of your FREE tools! \n
+        $body = "Hello, and welcome to LuckyLifeTools!\n  
+          Please click the link below to verify your account and 
+          gain access to the printables. \n
           http://luckylifetools.com/verify.php?a=$refid
-          \n 
-          Have a LUCKY day!\n
-          Ilina
+          \n    
+		  We love feedback! Feel free respond to this email, and let us know what you think about the tools. \n
+		  Best, \n
+          Ilina, LuckyLifeTools founder
           ";
         // Create the message
         $message = Swift_Message::newInstance()
@@ -121,7 +121,7 @@ if (isset($_POST['btn-signup']) != "") {
   <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
-<body class="internal">
+<body class="internal userpages">
 
   <header class="menu fixate">
     <nav class="session">
@@ -133,10 +133,9 @@ if (isset($_POST['btn-signup']) != "") {
     </div>
   </header> 
 
-  <div class="container printable" id="LifePlanner">
-    <object type="image/svg+xml" data="images/icon-schedule.svg"></object>
+  <div class="container" id="LifePlanner">
     <h1>Sign Up
-      <p class="subheading">Sign Up to get access to your Life Tools.</p>
+      <p class="subheading">Sign up to  access to the Life Tools.</p>
     </h1>
 
     <?php
@@ -157,38 +156,36 @@ if (isset($_POST['btn-signup']) != "") {
       <div class="col-md-12">
         <div class="input-group">
           <div class="row">
-            <div class="one columns">Email:</div> 
-            <div class="four columns form-input">
+            <div class="two columns">Email:</div> 
+            <div class="six columns form-input">
               <input type="email" name="email" placeholder="Your Email" required />
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="one columns">Password:</div>
-          <div class="four columns form-input">
+          <div class="two columns">Password:</div>
+          <div class="six columns form-input">
             <input type="password" name="password" placeholder="Your Password" required />
           </div>
         </div>
 
         <div class="row">
-          <div class="one columns">Password (Confirm):</div>
-          <div class="four columns form-input">
+          <div class="two columns">Password (Confirm):</div>
+          <div class="six columns form-input">
             <input type="password" name="password2" placeholder="Your Password" required />
           </div>
         </div>
         
         <hr />
-        <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
-        <hr />
+        <button type="submit" class="btn btn-block signup button-primary" name="btn-signup">Sign Up</button>
       </div>
-    </form>
-
-    <a href="login.php">Login Here...</a>
-    <hr />
-    <a href="forgot.php">Forgot your password></a>
-    <hr />
-  </div>
+    </form> 
+	<p>Have you created an account before? <a href="login.php">Login Here...</a>
+    </p>
+	<hr />
+    <a href="forgot.php">Forgot your password?</a> 
+</div>
 
   <footer>    
     <div class="sm">

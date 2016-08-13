@@ -49,16 +49,7 @@
           <p class="subheading">Brainstorm, set, and organize your goals, and create a plan of action.</p>
   </h1>
           <div class="row tool_pages"><img src="images/pages-goal_planner.jpg" width="405" height="224" alt="Yoledo Goal Planner"></div> 
-        <p>The Goal Planner Kit is a collection of tools that allows you to   outline, prioritize, and detail your current goals. It's designed to   help you organize your goals and stay focused. </p> 
-      <div class="tool_content">
-          <h5>Worksheet</h5> 
-            <p>Jot down all your goals, then select the ones to pursue first, and define deadlines</p> 
-          <h5>3 Goal detail pages (3 variations - personal, social, professional)</h5>
-			<p>For the goals that require most of your resources and attention, this tool provides an in-depth planning system. You can use it to outline the goal details, deadline, otivation, resources you have and should utilize; potentail obstacles and weaknesses, ideas on how to overcome them, an action plan, and a 1-year timeline.</p>
-   		  <h5>Master Plan</h5> 
-            <p>Gives you a bird-view of your top 10 goals, while allowing you to prioritize them, and detail the top 3 goals. </p> 
-  </div>
-
+        <p>The Goal Setter is a  tool that allows you to   outline, prioritize, and detail your current goals. It's designed to   help you get clear and stay focused. </p>
         <p>This printable is a worksheet that gives you the structure and the guidance to go through this process. It's totally FREE, and you can download after a quick sign up.</p>
       <?php
         if (!$logged_in) {

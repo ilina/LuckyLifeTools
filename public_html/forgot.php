@@ -18,7 +18,7 @@ if (isset($_POST['btn-forgot']) != "") {
   	$update_result = $db->query("UPDATE users SET password = '$password' WHERE email='$email'");	
 		// verify if update was succsesful
 		if (!$update_result) {
-			$msg = 'Oops something went wrong! Try and reset your email again!';
+			$msg = 'Oops, something went wrong... Please try and reset your email again.';
 		} else {
 			$msg = 'Your new password has been sent to your email!';
 			/*
@@ -32,12 +32,11 @@ if (isset($_POST['btn-forgot']) != "") {
 
       // setup the mailing class
       $mailer = Swift_Mailer::newInstance($transport);
-      $body = "Hi,\n
-        You've requested a password reset from LuckyLifeTools! \n
+      $body = "Hello,\n
+        We received your password reset request from LuckyLifeTools. \n
         Your new password is $pass, \n
         \n 
-        Have a LUCKY day!\n
-        Ilina
+		http://www.LuckyLifeTools.com
         ";
       // Create the message
       $message = Swift_Message::newInstance()
@@ -73,25 +72,23 @@ if (isset($_POST['btn-forgot']) != "") {
   <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
-<body class="internal">
+<body class="internal userpages">
 
   <header class="menu fixate">
     <nav class="session">
       <a href="login.php" class="login login-modal">Login</a>
       <a href="signup.php" class="signup signup-modal">Sign Up FREE</a>
     </nav>
-    <a href="index.php" class="logo">
-      <img src="images/lucky_logo.png">
-      <b>life tools</b></div>
-    </a>
+    <div class="logo">
+            <a href="index.php"></a>
+    </div>
   </header> 
 
-  <div class="container printable" id="LifePlanner">
-    <object type="image/svg+xml" data="images/icon-schedule.svg"></object>
-    <h1>Forgot your password?
-      <p class="subheading">Enter your email to reset your password</p>
+  <div class="container" id="LifePlanner">
+    <h1>Forgot  password?
+      <p class="subheading">No worries. Enter your email and we'll help you reset it.</p>
     </h1>
-
+	<hr />
     <?php
       // displays the error message in the event of signup failure
       if ($msg != "") {
@@ -110,14 +107,15 @@ if (isset($_POST['btn-forgot']) != "") {
       <div class="col-md-12">
         <div class="input-group">
           <div class="row">
-            <div class="one columns">Email:</div> 
+            <div class="one column">Email:</div> 
             <div class="four columns form-input">
               <input type="email" name="email" placeholder="Your Email" required />
             </div>
+            <div class="seven columns">
+               <button type="submit" class="btn btn-block button-primary" name="btn-forgot">Reset Password</button>            
+            </div>
           </div>
-        </div>
-        <hr />
-        <button type="submit" class="btn btn-block btn-primary" name="btn-forgot">Reset Password</button>
+        </div> 
         <hr />
       </div>
     </form>
