@@ -85,8 +85,8 @@ if (isset($_POST['btn-forgot']) != "") {
   </header> 
 
   <div class="container" id="LifePlanner">
-    <h1>Forgot your password?
-      <p class="subheading">Enter your email to reset your password</p>
+    <h1>Forgot  password?
+      <p class="subheading">No worries. Enter your email and we'll help you reset it.</p>
     </h1>
 
     <?php
@@ -107,7 +107,7 @@ if (isset($_POST['btn-forgot']) != "") {
       <div class="col-md-12">
         <div class="input-group">
           <div class="row">
-            <div class="two columns">Email:</div> 
+            <div class="one column">Email:</div> 
             <div class="four columns form-input">
               <input type="email" name="email" placeholder="Your Email" required />
             </div>

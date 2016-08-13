@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body class="homepage">
   <div class="intro">
 	  <header class="menu" id="headerfix"> 
       <div class="menu_background"></div>
