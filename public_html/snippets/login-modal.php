@@ -24,11 +24,9 @@
 						<input type="password" name="password" placeholder="Your Password" required />
 					</div>
 				</div>
-				
-				<hr />
 				<button type="submit" class="btn btn-block button-primary" name="btn-login">Login</button>
 				<p>Are you a first-time visitor? <a href="signup.php" class="signup-modal">Sign Up Here...</a></p> 
-			</div>
+		  </div>
 		</form>
 		
 		<hr />
