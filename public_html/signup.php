@@ -184,7 +184,7 @@ if (isset($_POST['btn-signup']) != "") {
 	<p>Have you created an account before? <a href="login.php">Login Here...</a>
     </p>
 	<hr />
-    <a href="forgot.php">Forgot your password></a> 
+    <a href="forgot.php">Forgot your password?</a> 
 </div>
 
   <footer>    
