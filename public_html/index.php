@@ -172,7 +172,7 @@
             <?php
               if (!$logged_in) {
             ?>
-          	  <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p>
+          	  <a href="#" class="signup-modal">Sign up</a> (quick and FREE) to download.</p>
             <?php
               }
             ?>
@@ -278,7 +278,7 @@
             <?php
               if (!$logged_in) {
             ?>
-            	 <a href="#" class="signup-modal">Sign up</a> (quick and free) to download.</p> 
+            	  <a href="#" class="signup-modal">Sign up</a> (quick and FREE) to download.</p> 
             <?php
               }
             ?>

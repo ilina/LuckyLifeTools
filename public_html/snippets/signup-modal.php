@@ -3,7 +3,8 @@
 	<div class="modal-content">
 	  <div class="modal-header">
 	    <span class="close close-signup">X</span>
-	    <h2>Sign Up</h2>
+	    <h2>Sign Up</h2>      
+        <p class="subheading">Please login to access the printables.</p>
 	  </div>
 	  <br />
 	  <div class="modal-body">
