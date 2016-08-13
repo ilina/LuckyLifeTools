@@ -34,13 +34,11 @@
 	        
 	        <hr />
 	        <button type="submit" class="btn btn-block button-primary" name="btn-signup">Sign Up</button>
-	        <hr />
+	        <p>Have you created an account before? <a href="login.php" class="login-modal">Login Here</a></p>
 	      </div>
 	    </form>
-	    <a href="login.php" class="login-modal">Login Here...</a>
-		<hr />
+    	<hr />
 		<a href="forgot.php">Forgot your password?</a>
-		<hr />
 	  </div> 
 	</div>
 </div>

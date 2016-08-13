@@ -27,10 +27,10 @@
 				
 				<hr />
 				<button type="submit" class="btn btn-block button-primary" name="btn-login">Login</button>
-				<hr />
+				<p>Are you a first-time visitor? <a href="signup.php" class="signup-modal">Sign Up Here...</a></p> 
 			</div>
 		</form>
-		<a href="signup.php" class="signup-modal">Sign Up Here...</a>
+		
 		<hr />
 		<a href="forgot.php">Forgot your password?</a>
 		<hr />
