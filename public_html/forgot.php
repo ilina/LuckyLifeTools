@@ -83,6 +83,9 @@ if (isset($_POST['btn-forgot']) != "") {
             <a href="index.php"></a>
     </div>
   </header> 
+	<div class="breadcrumb">
+    	<a href="index.php#printables">Back to all Life Tools</a> 
+    </div>    
 
   <div class="container" id="LifePlanner">
     <h1>Forgot  password?
