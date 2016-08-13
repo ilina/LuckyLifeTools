@@ -107,13 +107,12 @@ if (isset($_POST['btn-forgot']) != "") {
       <div class="col-md-12">
         <div class="input-group">
           <div class="row">
-            <div class="one columns">Email:</div> 
+            <div class="two columns">Email:</div> 
             <div class="four columns form-input">
               <input type="email" name="email" placeholder="Your Email" required />
             </div>
           </div>
-        </div>
-        <hr />
+        </div> 
         <button type="submit" class="btn btn-block button-primary" name="btn-forgot">Reset Password</button>
         <hr />
       </div>
