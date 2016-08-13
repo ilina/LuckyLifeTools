@@ -23,7 +23,7 @@ if (isset($_POST['btn-login']) != "") {
  	if ($row && $password == $row['password']) {
  		// check if verified email
  		if (!$row['verified']) {
- 			$msg = "Looks like we still haven\'t received your email verification. Please click the link in the email we sent you to verify your account.";
+ 			$msg = "Looks like we still haven't received your email verification. Please click the link in the email we sent you to verify your account.";
  		} else {
 	 		$_SESSION['user'] = $row['email'];
 	 		$location = 'index.php';
@@ -33,7 +33,7 @@ if (isset($_POST['btn-login']) != "") {
 	 		header("Location: $location");
 	 	}
  	} else {
- 		$msg = "Oops, we don\'t recognize this info. Please check your email or password and try again.";
+ 		$msg = "Oops, we don't recognize this info. Please check your email or password and try again.";
  	}
 }
 

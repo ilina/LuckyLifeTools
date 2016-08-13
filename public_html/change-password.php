@@ -71,12 +71,10 @@ if (isset($_POST['btn-change']) != "") {
   <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
-<body class="internal">
+<body class="internal userpages">
 
 	<header class="menu fixate">
-		<nav class="session">
-			<!-- No change password because we don't want to be re-directed back to here -->
-      <a href="change-password.php" class="change-password">Change Password</a>
+		<nav class="session"> 
       <a href="logout.php" id="logout" class="login logged_in">Log Out</a>
 		</nav>
     <div class="logo">
@@ -85,9 +83,8 @@ if (isset($_POST['btn-change']) != "") {
 	</header> 
 
 	<div class="container printable" id="LifePlanner">
-		<object type="image/svg+xml" data="images/icon-schedule.svg"></object>
-		<h1>Login
-    	<p class="subheading">Change your password.</p>
+	  <h1>Settings
+    	<p class="subheading">Feel free to change your password below.</p>
     </h1>
 
     <?php
@@ -108,22 +105,22 @@ if (isset($_POST['btn-change']) != "") {
 		  <div class="col-md-12">
 				<div class="input-group">
 					<div class="row">
-						<div class="one columns">Email:</div> 
-						<div class="four columns form-input">
+						<div class="two columns">Old password:</div> 
+						<div class="six columns form-input">
 							<input type="password" name="old-password" placeholder="Your Current Password" required />
 						</div>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="one columns">Password:</div>
-					<div class="four columns form-input">
+					<div class="two columns">New Password:</div>
+					<div class="six columns form-input">
 						<input type="password" name="password" placeholder="Your New Password" required />
 					</div>
 				</div>
 				<div class="row">
-					<div class="one columns">Password:</div>
-					<div class="four columns form-input">
+					<div class="two columns">New Password (confirm):</div>
+					<div class="six columns form-input">
 						<input type="password" name="password2" placeholder="Your New Password (Confirmed)" required />
 					</div>
 				</div>
