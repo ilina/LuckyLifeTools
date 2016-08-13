@@ -135,7 +135,7 @@ if (isset($_POST['btn-signup']) != "") {
 
   <div class="container printable" id="LifePlanner">
     <h1>Sign Up
-      <p class="subheading">Sign Up to get access to your Life Tools.</p>
+      <p class="subheading">Sign up to  access to the Life Tools.</p>
     </h1>
 
     <?php
@@ -178,16 +178,14 @@ if (isset($_POST['btn-signup']) != "") {
         </div>
         
         <hr />
-        <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
-        <hr />
+        <button type="submit" class="btn btn-block signup button-primary" name="btn-signup">Sign Up</button>
       </div>
-    </form>
-
-    <a href="login.php">Login Here...</a>
-    <hr />
-    <a href="forgot.php">Forgot your password></a>
-    <hr />
-  </div>
+    </form> 
+	<p>Have you created an account before? <a href="login.php">Login Here...</a>
+    </p>
+	<hr />
+    <a href="forgot.php">Forgot your password></a> 
+</div>
 
   <footer>    
     <div class="sm">

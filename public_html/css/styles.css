@@ -583,7 +583,7 @@ button { font-weight:normal;}
 .professional h6{
 	background-position: 0 -81px;
 	color: #43afb5;}		
-.tool_pages{ width: 100%; overflow:auto; }	
+.tool_pages{ width: 100%; overflow:auto; display:none; }	
 .internal img{  margin:0 ;}	
 .tool_pages img { display:block; margin:0 auto 30px; float:none; }
 
