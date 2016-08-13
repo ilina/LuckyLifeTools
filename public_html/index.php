@@ -31,7 +31,7 @@
             <form class="login logged_in logout-form" action="logout.php" method="post">
               <input type="hidden" name="location" value=<?php echo $_SERVER['REQUEST_URI']; ?> />
             </form>
-            <a href="change-password.php" class="change-password">Change Password</a>
+            <a href="change-password.php" class="change-password">Settings</a>
             <a href="logout.php" class="login logged_in logout-button"">Log Out</a>
           <?php
             } else {
