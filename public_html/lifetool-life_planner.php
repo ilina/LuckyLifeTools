@@ -24,6 +24,7 @@
         <?php 
           if ($logged_in) {
         ?>
+          <a href="change-password.php" class="change-password">Change Password</a>
           <a href="logout.php" class="login logged_in">Log Out</a>
         <?php
           } else {
