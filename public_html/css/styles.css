@@ -883,3 +883,6 @@ footer img {
 }
 
 .alert { color:#e58847; padding:20px 0;}
+
+.userpages input[type=email],
+.userpages input[type=password] { width:100%;}

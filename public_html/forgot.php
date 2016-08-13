@@ -72,7 +72,7 @@ if (isset($_POST['btn-forgot']) != "") {
   <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
-<body class="internal">
+<body class="internal userpages">
 
   <header class="menu fixate">
     <nav class="session">
@@ -88,7 +88,7 @@ if (isset($_POST['btn-forgot']) != "") {
     <h1>Forgot  password?
       <p class="subheading">No worries. Enter your email and we'll help you reset it.</p>
     </h1>
-
+	<hr />
     <?php
       // displays the error message in the event of signup failure
       if ($msg != "") {
@@ -111,9 +111,11 @@ if (isset($_POST['btn-forgot']) != "") {
             <div class="four columns form-input">
               <input type="email" name="email" placeholder="Your Email" required />
             </div>
+            <div class="seven columns">
+               <button type="submit" class="btn btn-block button-primary" name="btn-forgot">Reset Password</button>            
+            </div>
           </div>
         </div> 
-        <button type="submit" class="btn btn-block button-primary" name="btn-forgot">Reset Password</button>
         <hr />
       </div>
     </form>

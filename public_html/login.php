@@ -50,7 +50,7 @@ if (isset($_POST['btn-login']) != "") {
   <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
-<body class="internal">
+<body class="internal userpages">
 
 	<header class="menu fixate">
 		<nav class="session">
@@ -85,16 +85,16 @@ if (isset($_POST['btn-login']) != "") {
 		  <div class="col-md-12">
 				<div class="input-group">
 					<div class="row">
-						<div class="one columns">Email:</div> 
-						<div class="four columns form-input">
+						<div class="two columns">Email:</div> 
+						<div class="six columns form-input">
 							<input type="email" name="email" placeholder="Your Email" required />
 						</div>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="one columns">Password:</div>
-					<div class="four columns form-input">
+					<div class="two columns">Password:</div>
+					<div class="six columns form-input">
 						<input type="password" name="password" placeholder="Your Password" required />
 					</div>
 				</div>
