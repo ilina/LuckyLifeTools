@@ -43,14 +43,14 @@ if (isset($_POST['btn-signup']) != "") {
 
         // setup the mailing class
         $mailer = Swift_Mailer::newInstance($transport);
-        $body = "Hi,\n
-          You're almost there to access your free tools from LuckyLifeTools! \n
-          All you have to do is click the link below to verify your account and 
-          gain access to all of your FREE tools! \n
+        $body = "Hello, and welcome to LuckyLifeTools!\n  
+          Please click the link below to verify your account and 
+          gain access to the printables. \n
           http://luckylifetools.com/verify.php?a=$refid
-          \n 
-          Have a LUCKY day!\n
-          Ilina
+          \n    
+		  We love feedback! Feel free respond to this email, and let us know what you think about the tools. \n
+		  Best, \n
+          Ilina, LuckyLifeTools founder
           ";
         // Create the message
         $message = Swift_Message::newInstance()

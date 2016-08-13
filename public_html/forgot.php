@@ -18,7 +18,7 @@ if (isset($_POST['btn-forgot']) != "") {
   	$update_result = $db->query("UPDATE users SET password = '$password' WHERE email='$email'");	
 		// verify if update was succsesful
 		if (!$update_result) {
-			$msg = 'Oops something went wrong! Try and reset your email again!';
+			$msg = 'Oops, something went wrong... Please try and reset your email again.';
 		} else {
 			$msg = 'Your new password has been sent to your email!';
 			/*
@@ -32,12 +32,11 @@ if (isset($_POST['btn-forgot']) != "") {
 
       // setup the mailing class
       $mailer = Swift_Mailer::newInstance($transport);
-      $body = "Hi,\n
-        You've requested a password reset from LuckyLifeTools! \n
+      $body = "Hello,\n
+        We received your password reset request from LuckyLifeTools. \n
         Your new password is $pass, \n
         \n 
-        Have a LUCKY day!\n
-        Ilina
+		http://www.LuckyLifeTools.com
         ";
       // Create the message
       $message = Swift_Message::newInstance()
