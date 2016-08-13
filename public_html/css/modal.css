@@ -36,7 +36,9 @@
 
 /* The Close Button */
 .close {
-    color: white;
+    color: #666; 
+	font-family: 'Varela Round', sans-serif;
+	cursor:pointer;
     float: right;
     font-size: 28px;
     font-weight: bold;

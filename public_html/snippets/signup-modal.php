@@ -2,7 +2,7 @@
 <div id="signupModal" class="modal">
 	<div class="modal-content">
 	  <div class="modal-header">
-	    <span class="close-signup">X</span>
+	    <span class="close close-signup">X</span>
 	    <h2>Sign Up</h2>
 	  </div>
 	  <br />
