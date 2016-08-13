@@ -132,11 +132,6 @@ if (isset($_POST['btn-change']) != "") {
 				<hr />
 			</div>
 		</form>
-
-		<a href="signup.php">Sign Up Here...</a>
-		<hr />
-		<a href="forgot.php">Forgot your password?</a>
-		<hr />
   </div>
 
   <footer>    
