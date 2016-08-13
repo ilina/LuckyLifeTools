@@ -4,7 +4,7 @@
 	  <div class="modal-header">
 	    <span class="close close-signup">X</span>
 	    <h2>Sign Up</h2>      
-        <p class="subheading">Please login to access the printables.</p>
+        <p class="subheading">Create a quick and FREE account to access the printables.</p>
 	  </div>
 	  <br />
 	  <div class="modal-body">

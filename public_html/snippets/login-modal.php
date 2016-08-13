@@ -4,7 +4,7 @@
 	  <div class="modal-header">
 	    <span class="close close-login">X</span>
 	    <h2>Login</h2>        
-        <p class="subheading">Please login to access your printables.</p>
+        <p class="subheading">Please sign in to access the printables.</p>
 	  </div>
 	  <br />
 	  <div class="modal-body">
