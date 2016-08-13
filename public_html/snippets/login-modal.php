@@ -30,8 +30,7 @@
 		</form>
 		
 		<hr />
-		<a href="forgot.php">Forgot your password?</a>
-		<hr />
+		<a href="forgot.php">Forgot your password?</a> 
 	  </div> 
 	</div>
 </div>
