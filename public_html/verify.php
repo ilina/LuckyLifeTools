@@ -51,7 +51,6 @@ if ($row) {
   </header> 
 
   <div class="container printable" id="LifePlanner">
-    <object type="image/svg+xml" data="images/icon-schedule.svg"></object>
     <h1>
     	Verification
     </h1>

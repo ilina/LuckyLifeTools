@@ -55,15 +55,13 @@
           <div class="row categories">
             <div class="four columns personal"> 
                 <h6>PERSONAL:</h6>
-                <p>Body</p>
-                <p>Spirit</p>
-                <p>Leisure</p>
+                <p>Wellness</p>
+                <p>Activities</p>
                 <p>Lifestyle</p>
             </div>
             <div class="four columns social"> 
                 <h6>SOCIAL:</h6>
                 <p>Family</p>
-                <p>Friends</p>
                 <p>Community</p>
                 <p>Romance </p>
             </div>
@@ -71,7 +69,6 @@
                 <h6>PROFESSIONAL:</h6> 
                 <p>Work</p>
                 <p>Money</p>
-                <p>Growth</p>
                 <p>Contribution</p>
             </div>
           </div> 
