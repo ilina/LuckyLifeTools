@@ -57,6 +57,7 @@
 .modal-header {
     padding: 2px 16px;
     background-color: #eee;
+	text-align:center;
 }
 
 .modal-body {padding: 5px 30px;}
@@ -68,6 +69,6 @@
 	display:none;
 }
 
-.modal h2 { padding: 25px 0 20px;}
+.modal h2 { padding: 25px 0 5px;}
 
 .modal .button-primary { margin: 20px 0; font-weight:bold;}
