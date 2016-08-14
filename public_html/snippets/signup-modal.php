@@ -33,6 +33,7 @@
 	          </div>
 	        </div>
 	        <input type="hidden" name="location" value=<?php echo $_SERVER['REQUEST_URI']; ?> />
+			<input id="signup-x-loc" type="hidden" name="topScroll" value="" />
 	        <button type="submit" class="btn btn-block signup button-primary" name="btn-signup">Sign Up</button>
 	        <p>Have you created an account before? <a href="login.php" class="login-modal">Login Here</a></p>
 	      </div>

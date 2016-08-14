@@ -6,6 +6,17 @@ include_once 'snippets/connect.php';
 // redirect if logged in
 
 $msg = "";
+
+$location = 'index.php';
+if (isset($_POST['location'])) {
+	$arr = explode("?", $_POST['location']);
+	$location = $arr[0];
+}
+$topScroll = "";
+if (isset($_POST['topScroll'])) {
+	$topScroll = $_POST['topScroll'];
+}
+
 // checks to see if the user clicked the logged in button
 // and redirected back to the same page
 if (isset($_POST['btn-login']) != "") {
@@ -26,11 +37,11 @@ if (isset($_POST['btn-login']) != "") {
  			$msg = "Looks like we still haven't received your email verification. Please click the link in the email we sent you to verify your account.";
  		} else {
 	 		$_SESSION['user'] = $row['email'];
-	 		$location = 'index.php';
-	 		if (isset($_POST['location'])) {
-	 			$location = $_POST['location'];
-	 		}
-	 		header("Location: $location");
+	 		if ($topScroll === "") {
+				header("Location: $location"); 
+			} else {
+				header("Location: $location?scroll=$topScroll"); 
+			}
 	 	}
  	} else {
  		$msg = "Oops, we don't recognize this info. Please check your email or password and try again.";
@@ -107,13 +118,8 @@ if (isset($_POST['btn-login']) != "") {
 				</div>
 				
 				<hr />
-				<?php
-					$location = 'index.php';
-					if (isset($_POST['location'])) {
-						$location = $_POST['location'];
-					}
-				?>
 				<input type="hidden" name="location" value=<?php echo $location ?> />
+				<input type="hidden" name="topScroll" value=<?php echo $topScroll ?> />
 				<button type="submit" class="btn btn-block button-primary" name="btn-login">Sign In</button>
 				<p>Are you a first-time visitor? <a href="signup.php">Sign Up Here...</a>
                 </p>

@@ -8,7 +8,13 @@ require_once 'lib/swift_required.php';
 // and redirected back to the same page
 $location = 'index.php';
 if (isset($_POST['location'])) {
-  $location = $_POST['location'];
+  $arr = explode("?", $_POST['location']);
+  $location = $arr[0];
+}
+
+$topScroll = "";
+if (isset($_POST['topScroll'])) {
+  $topScroll = $_POST['topScroll'];
 }
 
 $msg = '';
@@ -101,8 +107,11 @@ if (isset($_POST['btn-signup']) != "") {
         if (isset($_POST['location'])) {
           $location = $_POST['location'];
         }
-
-        header("Location: $location");
+        if ($topScroll === "") {
+          header("Location: $location"); 
+        } else {
+          header("Location: $location?scroll=$topScroll"); 
+        }
       } else {
         $msg = 'Error in creating account';
       }
@@ -192,6 +201,7 @@ if (isset($_POST['btn-signup']) != "") {
         
         <hr />
         <input type="hidden" name="location" value=<?php echo $location ?> />
+        <input type="hidden" name="topScroll" value=<?php echo $topScroll ?> />
         <button type="submit" class="btn btn-block signup button-primary" name="btn-signup">Sign Up</button>
       </div>
     </form> 

@@ -43,7 +43,11 @@ curl_close($ch);
 ?>
 */
 
-echo 'http://'. $_SERVER['SERVER_NAME'] . '\n';
+//echo 'http://'. $_SERVER['SERVER_NAME'] . '\n';
 
-$location = $_SERVER['REQUEST_URI'];
+//$location = $_SERVER['REQUEST_URI'];
 //header("Location: $location");
+
+$st = "asdhi";
+$arr = explode("?", $st);
+var_dump($arr);

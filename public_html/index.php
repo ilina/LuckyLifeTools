@@ -32,7 +32,7 @@
               <input type="hidden" name="location" value=<?php echo $_SERVER['REQUEST_URI']; ?> />
             </form>
             <a href="change-password.php" class="change-password">Settings</a>
-            <a href="logout.php" class="login logged_in logout-button"">Log Out</a>
+            <a href="logout.php" class="login logged_in logout-button">Log Out</a>
           <?php
             } else {
           ?>
@@ -190,7 +190,7 @@
               }
             ?>
           </header>
-        <div class="row">
+        <div class="row printables">
               <ul class="four columns">
                   <h4>Vision:</h4> 
                   <li> 
@@ -696,6 +696,7 @@
       </section>
   </div> 
   <?php
+    include_once 'snippets/logout-form.php';
     include_once 'snippets/login-modal.php';
     include_once 'snippets/signup-modal.php';
   ?>

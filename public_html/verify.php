@@ -36,14 +36,15 @@ if ($row) {
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link type="text/css" rel="stylesheet" href="css/modal.css" />
 </head>
 
 <body class="internal">
 
   <header class="menu fixate">
-    <nav class="session">
-      <a href="login.php" class="login">Login</a>
-      <a href="signup.php" class="signup">Sign Up FREE</a>
+    <nav class="session">            
+      <a href="/login.php" class="login login-modal">Login</a>
+      <a href="#" class="signup signup-modal">Sign Up FREE</a>
     </nav>
     <div class="logo">
             <a href="index.php"></a>
@@ -62,6 +63,11 @@ if ($row) {
     </div>
 
   </div>
+  <?php
+    include_once 'snippets/logout-form.php';
+    include_once 'snippets/login-modal.php';
+    include_once 'snippets/signup-modal.php';
+  ?>
 
   <footer>    
     <div class="sm">
@@ -71,7 +77,11 @@ if ($row) {
     </div>
     Copyright  © <strong>LuckyLifeTools.com</strong> - All rights reserved. 
     <span class="terms"><a href="https://www.yoledo.com/pages/terms" target="_blank">Terms</a> | <a href="https://www.yoledo.com/pages/privacy" target="_blank">Privacy</a></span>
-  </footer>
-        
+  </footer>        
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="js/functions.js"></script>      
+  <script src="js/modal.js"></script>
+
 </body>
 </html>
