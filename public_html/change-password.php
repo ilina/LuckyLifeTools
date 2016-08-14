@@ -1,6 +1,7 @@
 <?php
 include_once 'snippets/connect.php';
 include_once 'snippets/checked-login.php';
+require_once 'lib/swift_required.php';
 
 if (!$logged_in) {
 	// not suppose to be here
