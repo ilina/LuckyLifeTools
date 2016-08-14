@@ -128,7 +128,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
 $(document).ready(function() {
 	// submit the logout form when the logout button is clicked
 	$('.logout-button').click(function() {
-		$('#logout-top-scroll').val(document.body.scrollTop);
+		var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+		$('#logout-top-scroll').val(scrollTop);
 		$('.logout-form').submit();
 		return false;
 	});

@@ -13,14 +13,16 @@ $(document).ready(function() {
 	$('.login-modal').click(function() {
 		loginModal.style.display = "block";
     	signupModal.style.display = "none";
-    	$('#login-x-loc').val(document.body.scrollTop);
+		var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    	$('#login-x-loc').val(scrollTop);
 		return false;
 	})
 
 	$('.signup-modal').click(function() {
 		signupModal.style.display = "block";
         loginModal.style.display = "none";
-    	$('#signup-x-loc').val(document.body.scrollTop);
+		var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    	$('#signup-x-loc').val(scrollTop);
 		return false;
 	})
 
