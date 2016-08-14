@@ -37,6 +37,34 @@ if (isset($_POST['btn-change']) != "") {
 			  if (!$update_result) {
 					$msg = 'Oops something went wrong! Try and change your password again!';
 				} else {
+					/*
+					// For WAMP
+			        $transport = Swift_SmtpTransport::newInstance('aspen.nocdirect.com', 465, 'ssl')
+			          ->setUsername('hello@luckylifetools.com')
+			          ->setPassword('');
+			        */
+			        // For prod
+			        $transport = Swift_SmtpTransport::newInstance("localhost", 25);
+
+			        // setup the mailing class
+			        $mailer = Swift_Mailer::newInstance($transport);
+			        $body = "Hello,\n  
+			          You've recently updated your password to your account and we just wanted to notify you. \n
+			          If you're the one who changed the password, you can ignore this message. If not, log, you can reset your password at http://LuckyLifeTools.com/forgot.php
+			          \n    
+					  Best, \n
+			          Ilina, LuckyLifeTools founder
+			          ";
+			        // Create the message
+			        $message = Swift_Message::newInstance()
+			          ->setSubject('LuckyLifeTools - Password Change')
+			          ->setFrom(array('hello@luckylifetools.com' => 'Ilina'))
+			          ->setTo(array($email))
+			          //->setTo('iamjoshchang@gmail.com')
+			          ->setBody($body);
+
+			        // send the mail
+			        $mailer->send($message);
 					$msg = 'Your password has been changed!';
 				}
 	  	} else {

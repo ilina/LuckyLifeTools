@@ -137,7 +137,7 @@ if (isset($_POST['btn-forgot']) != "") {
     <span class="terms"><a href="https://www.yoledo.com/pages/terms" target="_blank">Terms</a> | <a href="https://www.yoledo.com/pages/privacy" target="_blank">Privacy</a></span>
   </footer>
   <?php
-    include_once 'snippets/logout-form.php'
+    include_once 'snippets/logout-form.php';
     include_once 'snippets/login-modal.php';
     include_once 'snippets/signup-modal.php';
   ?>
