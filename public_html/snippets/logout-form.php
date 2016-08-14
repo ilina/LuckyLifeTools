@@ -4,6 +4,7 @@
 ?>
   <form class="login logged_in logout-form" action="logout.php" method="post">
     <input type="hidden" name="location" value=<?php echo $_SERVER['REQUEST_URI']; ?> />
+      <!-- Hidden field to pass scroll location information -->
     <input id="logout-top-scroll" type="hidden" name="topScroll" value="" />
   </form>
 <?php

@@ -26,6 +26,7 @@
 					</div>
 				</div>
 				<input type="hidden" name="location" value=<?php echo $_SERVER['REQUEST_URI']; ?> />
+				<!-- Hidden field to pass scroll location information -->
 				<input id="login-x-loc" type="hidden" name="topScroll" value="" />
 				<button type="submit" class="btn btn-block button-primary" name="btn-login">Login</button>
 				<p>Are you a first-time visitor? <a href="signup.php" class="signup-modal">Sign Up Here...</a></p> 
