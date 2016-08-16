@@ -66,6 +66,9 @@
   		<form method="get" action="pdf/LuckyLifeTool-printable-GoalSetter.pdf">
 			<button type="submit" class="button-primary">Download Printable</button>
         </form>
+      <?php
+        }
+      ?>
 	<div class="format">
     	<p class="pdfPrintable"> PDF Printable</p>
         <p><b>SIZE:</b> U.S. Letter size 8.5"x11"</p>
